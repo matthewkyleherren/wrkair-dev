@@ -243,21 +243,28 @@
   --border-progress: 0;
   position: relative;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 40rem;
+  grid-template-rows: 1fr auto;
+  gap: 0 4rem;
+  padding: 0 var(--base-padding);
   opacity: var(--animate-in);
   transform: translateY(calc(10rem * (1 - var(--animate-to-position))));
+  height: 100%;
 }
 
 .imageSlider {
   position: relative;
   width: 100%;
   overflow: hidden;
+  grid-column: 1;
+  grid-row: 1 / -1;
 }
 
 .imageSliderMask {
   overflow: hidden;
   border-radius: calc(1.2rem + 14.8rem * (1 - var(--border-progress)));
-  margin: 0 var(--base-padding);
-  max-height: calc(100vh - 20rem);
+  height: 100%;
 }
 
 .imageSliderInner {
@@ -280,8 +287,7 @@
 
 .imageSliderImage {
   width: 100%;
-  height: auto;
-  aspect-ratio: 2172 / 1800;
+  height: 100%;
   object-fit: cover;
   /* Zoom effect driven by --zoom-progress */
   transform: scale(calc(1 + 0.15 * var(--zoom-progress)));
