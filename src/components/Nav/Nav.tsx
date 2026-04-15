@@ -258,27 +258,27 @@ export default function Nav() {
           <ul className={styles.navMainLinks}>
             <li className={pathname === "/experience" ? styles.active : ""}>
               <span className={styles.navLink}>
-                <Link href="/experience">Experience</Link>
+                <Link href="/experience" onClick={closeMenu}>Experience</Link>
               </span>
             </li>
             <li className={pathname === "/technology" ? styles.active : ""}>
               <span className={styles.navLink}>
-                <Link href="/technology">Technology</Link>
+                <Link href="/technology" onClick={closeMenu}>Technology</Link>
               </span>
             </li>
             <li className={pathname === "/company" ? styles.active : ""}>
               <span className={styles.navLink}>
-                <Link href="/company">Company</Link>
+                <Link href="/company" onClick={closeMenu}>Company</Link>
               </span>
             </li>
             <li className={pathname === "/news" ? styles.active : ""}>
               <span className={styles.navLink}>
-                <Link href="/news">News</Link>
+                <Link href="/news" onClick={closeMenu}>News</Link>
               </span>
             </li>
             <li className={pathname === "/careers" ? styles.active : ""}>
               <span className={styles.navLink}>
-                <Link href="/careers">Careers</Link>
+                <Link href="/careers" onClick={closeMenu}>Careers</Link>
               </span>
             </li>
             <li className={styles.mobileOnly}>
@@ -361,27 +361,27 @@ export default function Nav() {
             <ul className={styles.navSubLinks}>
               <li>
                 <span className={styles.captionSmall}>
-                  <Link href="/privacy-policy">Privacy Policy</Link>
+                  <Link href="/privacy-policy" onClick={closeMenu}>Privacy Policy</Link>
                 </span>
               </li>
               <li>
                 <span className={styles.captionSmall}>
-                  <Link href="/terms-of-use">Terms of Use</Link>
+                  <Link href="/terms-of-use" onClick={closeMenu}>Terms of Use</Link>
                 </span>
               </li>
               <li>
                 <span className={styles.captionSmall}>
-                  <Link href="/impact-reporting">Impact Reporting</Link>
+                  <Link href="/impact-reporting" onClick={closeMenu}>Impact Reporting</Link>
                 </span>
               </li>
               <li>
                 <span className={styles.captionSmall}>
-                  <Link href="/transparency">Health Plan Transparency</Link>
+                  <Link href="/transparency" onClick={closeMenu}>Health Plan Transparency</Link>
                 </span>
               </li>
               <li>
                 <span className={styles.captionSmall}>
-                  <Link href="/safety-policy">Safety Policy</Link>
+                  <Link href="/safety-policy" onClick={closeMenu}>Safety Policy</Link>
                 </span>
               </li>
             </ul>
