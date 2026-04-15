@@ -255,6 +255,7 @@
   overflow: hidden;
   border-radius: calc(1.2rem + 14.8rem * (1 - var(--border-progress)));
   margin: 0 var(--base-padding);
+  max-height: calc(100vh - 20rem);
 }
 
 .imageSliderInner {
@@ -266,16 +267,13 @@
   --progress: 0;
   --zoom-progress: 0;
   --end: 0;
+  --slide-index: 0;
   grid-row: 1;
   grid-column: 1;
   position: relative;
-  /* Stack slides: all in same cell, translate based on progress */
+  /* Stack slides: earlier slides on top via z-index, translate out on exit */
+  z-index: calc(10 - var(--slide-index));
   transform: translateX(calc(var(--progress) * -100%));
-  opacity: calc(1 - var(--progress) * 0.5);
-}
-
-.imageSliderScale:first-child {
-  z-index: 1;
 }
 
 .imageSliderImage {
