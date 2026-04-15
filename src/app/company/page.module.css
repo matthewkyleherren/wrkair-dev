@@ -41,39 +41,70 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100lvh;
   z-index: 0;
   pointer-events: none;
 }
 
 .blueLayer {
+  --intro: 0;
+  --animate-scroll: 0;
   position: absolute;
-  inset: 0;
-  background-color: var(--color-blue);
+  bottom: 0;
+  width: 100%;
+  height: 100lvh;
+  background-color: var(--color-dark-blue, #0a1628);
+  z-index: 1;
+  transform-origin: bottom;
+  transform: translateY(calc((1 - var(--intro)) * 12rem))
+             scaleY(calc(0.14 + (1 - 0.14) * var(--animate-scroll)));
 }
 
 .orangeLayer {
+  --intro: 0;
+  --animate-scroll: 0;
   position: absolute;
-  inset: 0;
-  background-color: var(--color-orange);
-  clip-path: inset(0 0 50% 0);
+  bottom: 0;
+  width: 100%;
+  height: 100lvh;
+  background-color: var(--color-orange, #f26522);
+  z-index: 2;
+  transform-origin: bottom;
+  transform: translateY(calc((1 - var(--intro)) * 3.6rem))
+             scaleY(calc(0.04 + (1 - 0.04) * var(--animate-scroll)));
 }
 
 .whiteLayer {
+  --progress: 0;
   position: absolute;
-  inset: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2rem;
   background-color: var(--color-white);
-  clip-path: inset(0 0 75% 0);
+  z-index: 3;
+  transform-origin: bottom;
+  transform: scale3d(1, var(--progress), 1);
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    min-height: 200vh;
+    min-height: 200lvh;
   }
 
   .heroTitle {
     font-size: 4.2rem;
     line-height: 1.1;
+  }
+
+  .blueLayer {
+    transform: translateY(calc((1 - var(--intro)) * 5.3rem))
+               scaleY(calc(0.14 + (1 - 0.14) * var(--animate-scroll)));
+  }
+
+  .orangeLayer {
+    transform: translateY(calc((1 - var(--intro)) * 1.5rem))
+               scaleY(calc(0.04 + (1 - 0.04) * var(--animate-scroll)));
   }
 }
 
@@ -598,12 +629,26 @@
    --------------------------------------------------------------------------- */
 
 .infoSection {
+  --progress: 0;
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--gutter-width);
   padding: 8rem 0;
   border-top: 1px solid rgba(14, 22, 32, 0.15);
   align-items: start;
+  position: relative;
+}
+
+.infoSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-black);
+  transform: scaleX(var(--progress));
+  transform-origin: left;
 }
 
 .infoLabel {
@@ -733,20 +778,47 @@
    --------------------------------------------------------------------------- */
 
 .pageEntry {
+  --border-radius-progress: 0;
+  --border-radius-out: 0;
   position: relative;
   min-height: 100vh;
+  border-radius:
+    calc(16rem * (1 - var(--border-radius-progress)))
+    calc(16rem * (1 - var(--border-radius-progress)))
+    calc(16rem * var(--border-radius-out))
+    calc(16rem * var(--border-radius-out));
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .pageEntry {
+    border-radius:
+      calc(8rem * (1 - var(--border-radius-progress)))
+      calc(8rem * (1 - var(--border-radius-progress)))
+      calc(8rem * var(--border-radius-out))
+      calc(8rem * var(--border-radius-out));
+  }
 }
 
 .pageEntryMedia {
+  --translate-y-in-progress: 0;
+  --translate-y-out-progress: 0;
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100lvh + 2rem);
   z-index: 0;
+  transform: translateY(calc((1 - var(--translate-y-in-progress)) * -60vh))
+             translateY(calc(var(--translate-y-out-progress) * (100vh + 15rem)));
 }
 
 .pageEntryMedia img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transform: scale(calc(1 + var(--translate-y-out-progress) * 0.05))
+             translateY(calc(var(--translate-y-out-progress) * -15%));
 }
 
 .pageEntryMediaMobile {

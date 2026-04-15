@@ -1,17 +1,12 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./page.module.css";
 import CompanyTimeline from "./CompanyTimeline";
 
-/* ------------------------------------------------------------------ */
-/*  Metadata                                                           */
-/* ------------------------------------------------------------------ */
-
-export const metadata: Metadata = {
-  title:
-    "Company | Joby Aviation \u2013 Building the Future of Electric Air Taxi Travel",
-  description:
-    "Learn how Joby Aviation is building an all\u2011electric air taxi company to save people time and cut emissions in cities around the world.",
-};
+gsap.registerPlugin(ScrollTrigger);
 
 /* ------------------------------------------------------------------ */
 /*  Constants                                                          */
@@ -82,22 +77,179 @@ const STATS = [
 /* ------------------------------------------------------------------ */
 
 export default function CompanyPage() {
+  const heroSectionRef = useRef<HTMLElement>(null);
+  const heroTitleRef = useRef<HTMLHeadingElement>(null);
+  const blueLayerRef = useRef<HTMLDivElement>(null);
+  const orangeLayerRef = useRef<HTMLDivElement>(null);
+  const whiteLayerRef = useRef<HTMLDivElement>(null);
+  const pageEntryRef = useRef<HTMLElement>(null);
+  const pageEntryMediaRef = useRef<HTMLDivElement>(null);
+  const pageEntryContentRef = useRef<HTMLDivElement>(null);
+  const todayBlockRef = useRef<HTMLDivElement>(null);
+  const infoSection1Ref = useRef<HTMLDivElement>(null);
+  const infoSection2Ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const kills: (ScrollTrigger | gsap.core.Timeline | gsap.core.Tween)[] = [];
+
+    /* ===================================================================
+       HERO — Layer intro + scroll animation
+       =================================================================== */
+    // Intro animation (on page load)
+    if (blueLayerRef.current) {
+      const introTween1 = gsap.to(blueLayerRef.current, { "--intro": 1, duration: 0.7, delay: 2, ease: "power2.inOut" });
+      kills.push(introTween1);
+    }
+    if (orangeLayerRef.current) {
+      const introTween2 = gsap.to(orangeLayerRef.current, { "--intro": 1, duration: 0.9, delay: 2.2, ease: "back.out(2)" });
+      kills.push(introTween2);
+    }
+    if (heroTitleRef.current) {
+      const introTween3 = gsap.fromTo(heroTitleRef.current, { y: "3rem", opacity: 0 }, { y: "0rem", opacity: 1, duration: 0.7, delay: 2.5, ease: "power2.out" });
+      kills.push(introTween3);
+    }
+
+    // Scroll animation for hero layers
+    if (heroSectionRef.current) {
+      const heroTl = gsap.timeline();
+      heroTl.set({}, {}, 1);
+
+      // Title moves up
+      if (heroTitleRef.current) {
+        heroTl.to(heroTitleRef.current, { y: "-100lvh", ease: "none", duration: 0.4 }, 0.2);
+      }
+
+      // Blue layer scales to full height
+      if (blueLayerRef.current) {
+        heroTl.to(blueLayerRef.current, { "--animate-scroll": 1, duration: 0.6, ease: "sine.out" }, 0.2);
+      }
+
+      // Orange layer scales to full height
+      if (orangeLayerRef.current) {
+        heroTl.to(orangeLayerRef.current, { "--animate-scroll": 1, duration: 0.56, ease: "power2.out" }, 0.28);
+      }
+
+      // White layer flash
+      if (whiteLayerRef.current) {
+        heroTl.to(whiteLayerRef.current, { "--progress": 1, duration: 0.4, ease: "power1.inOut" }, 0.2);
+        heroTl.to(whiteLayerRef.current, { "--progress": 0, duration: 0.1, ease: "power1.inOut" }, 0.6);
+      }
+
+      const heroSt = ScrollTrigger.create({
+        trigger: heroSectionRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        animation: heroTl,
+      });
+      kills.push(heroSt, heroTl);
+    }
+
+    /* ===================================================================
+       PAGE ENTRY — Border radius reveal + translate-y parallax
+       =================================================================== */
+    if (pageEntryRef.current) {
+      const entryTl = gsap.timeline();
+      entryTl.set({}, {}, 1);
+
+      entryTl.fromTo(pageEntryRef.current, { "--border-radius-progress": 0 }, { "--border-radius-progress": 1, ease: "power1.in", duration: 0.5 }, 0);
+
+      if (pageEntryMediaRef.current) {
+        entryTl.fromTo(pageEntryMediaRef.current, { "--translate-y-in-progress": 0 }, { "--translate-y-in-progress": 1, ease: "none", duration: 1 }, 0);
+      }
+
+      if (pageEntryContentRef.current) {
+        entryTl.fromTo(pageEntryContentRef.current, { opacity: 0 }, { opacity: 1, ease: "power1.out", duration: 0.4 }, 0.4);
+      }
+
+      const entrySt = ScrollTrigger.create({
+        trigger: pageEntryRef.current,
+        start: "top bottom",
+        end: "top top",
+        scrub: true,
+        animation: entryTl,
+      });
+      kills.push(entrySt, entryTl);
+
+      // Exit parallax
+      const exitTl = gsap.timeline();
+      if (pageEntryMediaRef.current) {
+        exitTl.fromTo(pageEntryMediaRef.current, { "--translate-y-out-progress": 0 }, { "--translate-y-out-progress": 1, ease: "none", duration: 1 }, 0);
+      }
+
+      const exitSt = ScrollTrigger.create({
+        trigger: pageEntryRef.current,
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+        animation: exitTl,
+      });
+      kills.push(exitSt, exitTl);
+    }
+
+    /* ===================================================================
+       TODAY BLOCK — Entrance animation
+       =================================================================== */
+    if (todayBlockRef.current) {
+      let todayFired = false;
+      const todaySt = ScrollTrigger.create({
+        trigger: todayBlockRef.current,
+        start: "top 80%",
+        onEnter: () => {
+          if (todayFired) return;
+          todayFired = true;
+          const title = todayBlockRef.current?.querySelector("h2");
+          if (title) gsap.fromTo(title, { y: "2rem", opacity: 0 }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7 });
+        },
+      });
+      kills.push(todaySt);
+    }
+
+    /* ===================================================================
+       INFO SECTIONS — Entrance animations
+       =================================================================== */
+    [infoSection1Ref.current, infoSection2Ref.current].forEach((section) => {
+      if (!section) return;
+      let fired = false;
+      const st = ScrollTrigger.create({
+        trigger: section,
+        start: "top 80%",
+        onEnter: () => {
+          if (fired) return;
+          fired = true;
+          gsap.to(section, { "--progress": 1, duration: 0.833, ease: "power2.out" });
+          const title = section.querySelector("h4");
+          if (title) gsap.fromTo(title, { y: "1.9rem", opacity: 0 }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.667, delay: 0.3 });
+          const desc = section.querySelector("p");
+          if (desc) gsap.fromTo(desc, { y: "1.4rem", opacity: 0 }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.5, delay: 0.5 });
+          const img = section.querySelector("img");
+          if (img) gsap.fromTo(img, { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, ease: "power2.out", duration: 0.6, delay: 0.3 });
+        },
+      });
+      kills.push(st);
+    });
+
+    return () => {
+      kills.forEach((k) => { if ("kill" in k) k.kill(); });
+    };
+  }, []);
+
   return (
     <div>
       {/* ============================================================
           Hero Section
           ============================================================ */}
-      <section className={styles.heroSection}>
+      <section ref={heroSectionRef} className={styles.heroSection}>
         <div className={styles.heroSticky}>
-          <h1 className={styles.heroTitle}>
+          <h1 ref={heroTitleRef} className={styles.heroTitle}>
             It&rsquo;s time to dream bigger. Our vision is to save a billion
             people an hour a day.
           </h1>
         </div>
         <div className={styles.heroBackground}>
-          <div className={styles.blueLayer} />
-          <div className={styles.orangeLayer} />
-          <div className={styles.whiteLayer} />
+          <div ref={blueLayerRef} className={styles.blueLayer} />
+          <div ref={orangeLayerRef} className={styles.orangeLayer} />
+          <div ref={whiteLayerRef} className={styles.whiteLayer} />
         </div>
       </section>
 
@@ -105,7 +257,6 @@ export default function CompanyPage() {
           Timeline Outer
           ============================================================ */}
       <div className={styles.timelineOuter}>
-        {/* Timeline Background Images */}
         <div className={styles.timelineBackground}>
           <div className={styles.imageSlider}>
             {TIMELINE_IMAGES.map((img, i) => (
@@ -120,7 +271,6 @@ export default function CompanyPage() {
           </div>
         </div>
 
-        {/* Intro Content */}
         <div className={styles.introContent}>
           <section id="intro" className={styles.introSection}>
             <div className={styles.introSticky}>
@@ -149,11 +299,9 @@ export default function CompanyPage() {
           </section>
         </div>
 
-        {/* Timeline Content */}
         <div className={styles.timelineContent}>
           <section id="mythology">
             <div className={styles.timelineWrapper}>
-              {/* Block 1: Origins header */}
               <div className={styles.timelineHeader}>
                 <div className={styles.headerColumn1}>
                   <span className={styles.headerLabel}>Origins</span>
@@ -173,7 +321,6 @@ export default function CompanyPage() {
                 </div>
               </div>
 
-              {/* Block 1: Timeline narrative titles */}
               <div className={styles.timelinePastIntro}>
                 <div className={styles.timelineTitle}>
                   <p className={styles.timelineTitleText}>
@@ -187,7 +334,6 @@ export default function CompanyPage() {
                   </p>
                 </div>
 
-                {/* Body text (mobile shown in flow, desktop in header grid) */}
                 <div className={styles.mobileOnly}>
                   <p className={styles.timelineBodyText}>
                     Imagine getting to work without traffic. Seeing your city
@@ -202,7 +348,6 @@ export default function CompanyPage() {
                   </p>
                 </div>
 
-                {/* Origins / 2009 header with body text */}
                 <div className={styles.timelineHeader}>
                   <div className={styles.headerColumn1}>
                     <span className={styles.headerLabel}>Origins</span>
@@ -227,7 +372,6 @@ export default function CompanyPage() {
                   </div>
                 </div>
 
-                {/* Block 2: Title */}
                 <div className={styles.timelineTitle}>
                   <p className={styles.timelineTitleText}>
                     From the electric motors to airframes and propellers, the
@@ -238,7 +382,6 @@ export default function CompanyPage() {
                   </p>
                 </div>
 
-                {/* Block 3 body text (mobile) */}
                 <div className={styles.mobileOnly}>
                   <p className={styles.timelineBodyText}>
                     This wasn&rsquo;t just a technical challenge. It meant
@@ -252,7 +395,6 @@ export default function CompanyPage() {
                   </p>
                 </div>
 
-                {/* Origins / Redwoods header with body text */}
                 <div className={styles.timelineHeader}>
                   <div className={styles.headerColumn1}>
                     <span className={styles.headerLabel}>Origins</span>
@@ -276,7 +418,6 @@ export default function CompanyPage() {
                   </div>
                 </div>
 
-                {/* Block 3: Title */}
                 <div className={styles.timelineTitle}>
                   <p className={styles.timelineTitleText}>
                     What began as a dream in the trees has since grown into a
@@ -286,7 +427,6 @@ export default function CompanyPage() {
                   </p>
                 </div>
 
-                {/* Block 4: Location header */}
                 <div className={styles.timelineHeader}>
                   <div className={styles.headerColumn1}>
                     <span className={styles.headerLabel}>Origins</span>
@@ -303,9 +443,6 @@ export default function CompanyPage() {
                 </div>
               </div>
 
-              {/* ======================================================
-                  Breakthroughs Timeline (interactive client component)
-                  ====================================================== */}
               <CompanyTimeline />
             </div>
           </section>
@@ -316,8 +453,7 @@ export default function CompanyPage() {
           About Section
           ============================================================ */}
       <section id="about" className={styles.aboutSection}>
-        {/* Joby Today */}
-        <div className={styles.todayBlock}>
+        <div ref={todayBlockRef} className={styles.todayBlock}>
           <span className={styles.todayLabel}>Joby today</span>
           <h2 className={styles.todayTitle}>
             We&rsquo;re a community of engineers and visionaries bringing the
@@ -334,8 +470,7 @@ export default function CompanyPage() {
           </div>
         </div>
 
-        {/* Careers Info Section */}
-        <div className={styles.infoSection}>
+        <div ref={infoSection1Ref} className={styles.infoSection}>
           <span className={styles.infoLabel}>Careers</span>
           <div className={styles.infoContent}>
             <h4 className={styles.infoTitle}>Join our crew</h4>
@@ -356,8 +491,7 @@ export default function CompanyPage() {
           </div>
         </div>
 
-        {/* Investors Info Section */}
-        <div className={styles.infoSection}>
+        <div ref={infoSection2Ref} className={styles.infoSection}>
           <span className={styles.infoLabel}>For Investors</span>
           <div className={styles.infoContent}>
             <h4 className={styles.infoTitle}>Backed by vision</h4>
@@ -387,8 +521,12 @@ export default function CompanyPage() {
       {/* ============================================================
           Page Entry (Bottom CTA)
           ============================================================ */}
-      <section id="explore" className={styles.pageEntry}>
-        <div className={styles.pageEntryMedia}>
+      <section
+        ref={pageEntryRef}
+        id="explore"
+        className={styles.pageEntry}
+      >
+        <div ref={pageEntryMediaRef} className={styles.pageEntryMedia}>
           <div className={styles.pageEntryMediaDesktop}>
             <img
               src={`${SANITY_CDN}/2d63ec7352e2a6938dcb11f485244bc156ed003a-3200x1800.jpg`}
@@ -403,7 +541,7 @@ export default function CompanyPage() {
           </div>
         </div>
         <div className={styles.pageEntrySticky}>
-          <div className={styles.pageEntryInner}>
+          <div ref={pageEntryContentRef} className={styles.pageEntryInner}>
             <div className={styles.pageEntryLeft}>
               <h3 className={styles.pageEntryTitle}>
                 Designing cleaner flight for people and the planet.
