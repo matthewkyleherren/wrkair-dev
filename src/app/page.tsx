@@ -601,6 +601,7 @@ export default function HomePage() {
                 ref={heroVideoRef}
                 className={`${styles.heroVideo} ${styles.heroDesktopVideo}`}
                 src={`${R2_CDN}/compressed-home-intro-desktop-r3.mp4`}
+                autoPlay
                 muted
                 playsInline
                 preload="auto"
@@ -609,6 +610,7 @@ export default function HomePage() {
                 ref={heroVideoMobileRef}
                 className={`${styles.heroVideo} ${styles.heroMobileVideo}`}
                 src={`${R2_CDN}/compressed-home-intro-mobile-r3.mp4`}
+                autoPlay
                 muted
                 playsInline
                 preload="auto"

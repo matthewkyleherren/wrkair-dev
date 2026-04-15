@@ -90,6 +90,7 @@ export default function Nav() {
   const [isHidden, setIsHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [logoRevealed, setLogoRevealed] = useState(false);
+  const [isInHero, setIsInHero] = useState(true);
 
   const isHome = pathname === "/";
   const currentPageLabel = PAGE_LABELS[pathname] ?? "";
@@ -116,6 +117,9 @@ export default function Nav() {
         setIsHidden(false);
       }
       setLastScrollY(currentY);
+
+      // Remove hero class once user scrolls past the first viewport
+      setIsInHero(currentY < window.innerHeight);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -140,7 +144,7 @@ export default function Nav() {
   /* Build class names */
   const navClasses = [
     styles.nav,
-    isHome ? styles.hero : "",
+    isHome && isInHero ? styles.hero : "",
     isOpen ? styles.open : "",
     isOpen ? styles.animateIn : "",
   ]

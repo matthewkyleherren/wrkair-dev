@@ -65,7 +65,7 @@
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background-color: var(--color-blue);
+  background-color: transparent;
 }
 
 .heroMediaWrapper {
@@ -203,7 +203,6 @@
   width: fit-content;
   color: var(--color-white);
   z-index: 5;
-  padding-left: 2.4rem;
   min-height: 6rem;
 }
 
@@ -256,11 +255,11 @@
 }
 
 .experienceHighlights {
-  background-color: var(--color-blue);
+  background-color: var(--color-white);
   width: 100%;
   min-height: 100dvh;
   padding: 3.2rem var(--base-padding) 18.8rem;
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 @media (max-width: 768px) {
@@ -966,9 +965,10 @@
   gap: 0px var(--gutter-width);
   width: 100%;
   padding: 0 var(--base-padding);
-  padding-top: 18.4rem;
-  padding-bottom: 18.4rem;
+  padding-top: 12rem;
+  padding-bottom: 5.7rem;
   margin: 0 auto;
+  background-color: var(--color-white);
   color: var(--color-black);
 }
 
@@ -1010,24 +1010,26 @@
 
 @media (max-width: 768px) {
   .newsButtonContainer {
-    grid-column: 1 / span 6;
-    justify-content: flex-start;
-    margin-top: 2.4rem;
+    grid-column: 4 / span 3;
+    align-self: start;
   }
 }
 
 .newsContainer {
   grid-column: 1 / span 16;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: row;
   gap: var(--gutter-width);
-  margin-top: 6.4rem;
+  margin-top: 11.2rem;
+}
+
+.newsContainer > * {
+  flex: 1 1 0;
 }
 
 @media (max-width: 768px) {
   .newsContainer {
-    grid-column: 1 / span 6;
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 4rem;
     margin-top: 4rem;
   }
@@ -1103,14 +1105,15 @@
 
 .sectionPartners {
   padding: 0 var(--base-padding);
-  padding-top: 18.4rem;
-  padding-bottom: 18.4rem;
+  padding-top: 12.7rem;
+  padding-bottom: 12.7rem;
+  background-color: var(--color-white);
 }
 
 @media (max-width: 768px) {
   .sectionPartners {
-    padding-top: 11rem;
-    padding-bottom: 11rem;
+    padding-top: 5.3rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -1132,6 +1135,7 @@
   font-weight: 550;
   line-height: 100%;
   white-space: pre-line;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
