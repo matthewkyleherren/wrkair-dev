@@ -34,7 +34,7 @@ const PARTNER_CATEGORIES = [
   },
   {
     name: "Airlines",
-    image: "08c1cc4c2b2f84e81af5a811a077423dbf1a82d5-1500x1892.jpg",
+    image: "63e7e05a6a30a30f436156a8cb269a9bf9462a41-1500x1892.jpg",
     description: "Our partnerships with leading global airlines will integrate our air taxi service into existing aviation networks.",
     logos: [
       { name: "Delta", src: "3668a86d6101741073f98b390a355183e6a7521a-480x180.png" },
@@ -44,7 +44,7 @@ const PARTNER_CATEGORIES = [
   },
   {
     name: "Infrastructure",
-    image: "08c1cc4c2b2f84e81af5a811a077423dbf1a82d5-1500x1892.jpg",
+    image: "0478fe6e587c2e8fb1ac677e0cf1ea3332083e6f-1500x1892.jpg",
     description: "Together with key infrastructure partners, we\u2019re building the physical backbone needed for convenient everyday flight.",
     logos: [
       { name: "Skyports", src: "703ef7455889d41a12b2750e5c0891426fa7b142-112x45.svg" },
@@ -57,7 +57,7 @@ const PARTNER_CATEGORIES = [
   },
   {
     name: "R&D",
-    image: "08c1cc4c2b2f84e81af5a811a077423dbf1a82d5-1500x1892.jpg",
+    image: "af456faf9640de0bdd711f84e45d958cc636ab8a-1500x1892.jpg",
     description: "We collaborate with pioneers in manufacturing and innovation to create a vertically integrated, world-class production ecosystem.",
     logos: [
       { name: "Toyota", src: "e2e469f991528ca2c648fd9455142a6388ea2e16-122x45.svg" },
@@ -66,7 +66,7 @@ const PARTNER_CATEGORIES = [
   },
   {
     name: "Technology",
-    image: "08c1cc4c2b2f84e81af5a811a077423dbf1a82d5-1500x1892.jpg",
+    image: "e139fbac7c088eda6c77b752cea28f4ca66fa420-1500x1892.png",
     description: "Our aviation technology partnerships power the systems that support navigation, autonomy, pilot training, and operational excellence.",
     logos: [
       { name: "Garmin", src: "65c47bff04766eeb14a3e794cbfcf3939c3d0f23-112x45.svg" },
@@ -75,7 +75,7 @@ const PARTNER_CATEGORIES = [
   },
   {
     name: "Government",
-    image: "08c1cc4c2b2f84e81af5a811a077423dbf1a82d5-1500x1892.jpg",
+    image: "bb92b433868cdbe3608420f4e69de82d3a952d7d-1120x1412.jpg",
     description: "We collaborate with forward-thinking government agencies to shape policy, accelerate innovation, and enable the introduction of advanced air mobility.",
     logos: [],
   },
@@ -201,6 +201,11 @@ export default function HomePage() {
         const numSlides = 3;
         const a = 0.9 / numSlides; // per-slide allocation
 
+        // Set initial state: first slide fully in
+        if (slideRefs.current[0]) {
+          slideRefs.current[0].style.setProperty("--slide-progress-in", "1");
+        }
+
         const expSt = ScrollTrigger.create({
           trigger: expWrapper,
           start: "top top",
@@ -213,16 +218,21 @@ export default function HomePage() {
               if (!slide) return;
 
               const slideStart = d * a;
-              const slideProgressIn = remap(progress, slideStart, slideStart + a, 0, 1);
-              const slideProgressOut = d < numSlides - 1 ? remap(progress, slideStart + a, slideStart + 2 * a, 0, 1) : 0;
-              const slideProgressEnd = d < numSlides - 2 ? remap(progress, slideStart + 2 * a, slideStart + 3 * a, 0, 1) : 0;
+              // First slide starts fully "in" — map from 0 so it's already at 1
+              const slideProgressIn = d === 0 ? 1 : remap(progress, slideStart, slideStart + a, 0, 1);
+              const slideProgressOut = d < numSlides - 1 ? remap(progress, slideStart + a * 0.8, slideStart + a * 1.8, 0, 1) : 0;
+              const slideProgressEnd = d < numSlides - 2 ? remap(progress, slideStart + a * 1.8, slideStart + a * 2.8, 0, 1) : 0;
+
+              // For last slide, add a "last child out" progress
+              const lastChildOut = d === numSlides - 1 ? remap(progress, 0.9, 1, 0, 1) : 0;
 
               slide.style.setProperty("--slide-progress-in", String(slideProgressIn));
               slide.style.setProperty("--slide-progress-out", String(slideProgressOut));
               slide.style.setProperty("--slide-progress-end", String(slideProgressEnd));
+              slide.style.setProperty("--slide-progress-last-child-out", String(lastChildOut));
 
               // Visibility: hide slides that have fully exited
-              if (slideProgressOut >= 1 && d < numSlides - 1) {
+              if (slideProgressEnd >= 1) {
                 slide.style.visibility = "hidden";
               } else {
                 slide.style.visibility = "visible";
@@ -626,7 +636,7 @@ export default function HomePage() {
                     className={styles.slide}
                     style={{
                       "--slide-index": i,
-                      "--slide-progress-in": 0,
+                      "--slide-progress-in": i === 0 ? 1 : 0,
                       "--slide-progress-out": 0,
                       "--slide-progress-end": 0,
                     } as React.CSSProperties}
@@ -904,10 +914,7 @@ export default function HomePage() {
                     <div
                       key={cat.name}
                       ref={(el) => { partnerContentItemRefs.current[i] = el; }}
-                      className={styles.partnersContentItem}
-                      style={{
-                        display: i === activePartner ? "flex" : "none",
-                      }}
+                      className={`${styles.partnersContentItem} ${i === activePartner ? styles.partnersContentItemActive : ""}`}
                     >
                       <p className={styles.partnerDescription}>{cat.description}</p>
                       {cat.logos.length > 0 && (
