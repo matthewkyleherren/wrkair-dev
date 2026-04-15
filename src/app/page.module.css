@@ -204,6 +204,7 @@
   color: var(--color-white);
   z-index: 5;
   padding-left: 2.4rem;
+  min-height: 6rem;
 }
 
 @media (max-width: 768px) {
@@ -222,6 +223,20 @@
   line-height: 120%;
   white-space: pre-line;
   max-width: 36.8rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  pointer-events: none;
+}
+
+.heroTextSlideItemActive {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  position: relative;
 }
 
 @media (max-width: 768px) {
@@ -409,9 +424,12 @@
   gap: 3.2rem;
   z-index: 3;
   text-decoration: none;
-  --fade-in: clamp(0, calc((var(--slide-progress-in, 0) - 0.6) / 0.1), 1);
-  --fade-out: calc(1 - clamp(0, calc(var(--slide-progress-out, 0) / 0.1), 1));
+  /* Content fades in after slide is 50% in, fades out as slide exits */
+  --fade-in: clamp(0, calc((var(--slide-progress-in, 0) - 0.5) / 0.3), 1);
+  --fade-out: calc(1 - clamp(0, calc(var(--slide-progress-out, 0) / 0.2), 1));
   opacity: calc(var(--fade-in) * var(--fade-out));
+  transform: translateY(calc((1 - var(--fade-in)) * 1.5rem));
+  transition: transform 0.1s ease-out;
 }
 
 @media (max-width: 768px) {
@@ -820,6 +838,7 @@
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: 0px var(--gutter-width);
   width: 100%;
+  will-change: transform, opacity;
 }
 
 @media (max-width: 768px) {
@@ -1174,6 +1193,7 @@
   display: flex;
   align-items: center;
   gap: 1.2rem;
+  transition: opacity 0.4s ease;
 }
 
 .partnersCategoryDot {
@@ -1254,13 +1274,15 @@
   width: 100%;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  transform: translateY(0.5rem);
 }
 
 .partnersContentItemActive {
   opacity: 1;
   pointer-events: auto;
   position: relative;
+  transform: translateY(0);
 }
 
 .partnerDescription {
