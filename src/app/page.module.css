@@ -36,7 +36,7 @@
   overflow: clip;
   height: fit-content;
   padding-bottom: 100vh;
-  background-color: var(--color-blue);
+  background-color: transparent;
 }
 
 @media (max-width: 768px) {
@@ -1013,6 +1013,8 @@
   font-weight: 550;
   line-height: 100%;
   white-space: pre-line;
+  opacity: 0;
+  transform: translateY(2rem);
 }
 
 @media (max-width: 768px) {
@@ -1029,6 +1031,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  opacity: 0;
+  transform: translateY(2rem);
 }
 
 @media (max-width: 768px) {
@@ -1064,6 +1068,8 @@
   text-decoration: none;
   color: inherit;
   gap: 2.4rem;
+  opacity: 0;
+  transform: translateY(2.5rem);
 }
 
 .newsItemHeader {

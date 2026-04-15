@@ -293,7 +293,7 @@ export default function TechnologyPage() {
       {/* ================================================================
           Hero Section
           ================================================================ */}
-      <section className={styles.heroSection}>
+      <section data-section="hero" className={styles.heroSection}>
         <div className={styles.heroStickyWrapper}>
           <div className={styles.heroSticky}>
             {/* Background Video */}

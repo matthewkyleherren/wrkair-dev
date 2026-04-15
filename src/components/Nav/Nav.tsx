@@ -118,8 +118,14 @@ export default function Nav() {
       }
       setLastScrollY(currentY);
 
-      // Remove hero class once user scrolls past the first viewport
-      setIsInHero(currentY < window.innerHeight);
+      // Remove hero class once user scrolls past the hero section
+      const heroEl = document.querySelector("[data-section='hero']");
+      if (heroEl) {
+        const heroBottom = heroEl.getBoundingClientRect().bottom;
+        setIsInHero(heroBottom > 0);
+      } else {
+        setIsInHero(currentY < window.innerHeight);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -196,7 +202,14 @@ export default function Nav() {
             className={styles.menuOpener}
             onClick={toggleMenu}
           />
-          <span className={styles.currentPage}>{currentPageLabel}</span>
+          <span className={styles.currentPage}>
+            {currentPageLabel}
+            {currentPageLabel && (
+              <svg className={styles.currentPageChevron} viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            )}
+          </span>
           <button
             type="button"
             className={styles.menuClose}

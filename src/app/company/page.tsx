@@ -239,7 +239,7 @@ export default function CompanyPage() {
       {/* ============================================================
           Hero Section
           ============================================================ */}
-      <section ref={heroSectionRef} className={styles.heroSection}>
+      <section ref={heroSectionRef} data-section="hero" className={styles.heroSection}>
         <div className={styles.heroSticky}>
           <h1 ref={heroTitleRef} className={styles.heroTitle}>
             It&rsquo;s time to dream bigger. Our vision is to save a billion

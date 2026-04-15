@@ -1007,7 +1007,7 @@ export default function ExperiencePage() {
       {/* ================================================================
           Hero Section — Full-screen video with title overlay
           ================================================================ */}
-      <section className={styles.heroSection} ref={heroSectionRef}>
+      <section data-section="hero" className={styles.heroSection} ref={heroSectionRef}>
         <div className={styles.heroStickyWrapper}>
           <div className={styles.heroSticky} ref={heroStickyRef}>
             {/* Background Video */}

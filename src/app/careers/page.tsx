@@ -95,7 +95,7 @@ export default function CareersPage() {
       {/* ============================================================
           Hero Section
           ============================================================ */}
-      <section id="careers-hero" className={styles.heroSection}>
+      <section id="careers-hero" data-section="hero" className={styles.heroSection}>
         <div className={styles.heroBackground} />
         <div className={styles.heroContent}>
           <div className={styles.heroText}>

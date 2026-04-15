@@ -607,6 +607,15 @@
   font-weight: 500;
   line-height: 89%;
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.currentPageChevron {
+  width: 1rem;
+  height: 0.6rem;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {

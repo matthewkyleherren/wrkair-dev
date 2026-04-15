@@ -387,8 +387,8 @@ export default function HomePage() {
       if (!isMobile) {
         let newsFired = false;
         const newsSt = ScrollTrigger.create({
-          trigger: newsContainerRef.current,
-          start: "top 70%",
+          trigger: newsSectionRef.current,
+          start: "top 60%",
           onEnter: () => {
             if (newsFired) return;
             newsFired = true;
@@ -396,17 +396,16 @@ export default function HomePage() {
             // Title + button reveal
             if (newsSectionRef.current) {
               const title = newsSectionRef.current.querySelector("h2");
-              if (title) gsap.fromTo(title, { y: "2rem", opacity: 0 }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7 });
+              if (title) gsap.to(title, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7 });
+
+              const btnContainer = newsSectionRef.current.querySelector("[class*='newsButtonContainer']");
+              if (btnContainer) gsap.to(btnContainer, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7, delay: 0.1 });
             }
 
-            // Staggered card animations - tighter stagger for more cohesive feel
+            // Staggered card animations
             newsItemRefs.current.forEach((item, i) => {
               if (!item) return;
-              const stagger = 0.12 * i; // Slightly tighter stagger
-              gsap.fromTo(item,
-                { y: "2.5rem", opacity: 0 },
-                { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7, delay: stagger }
-              );
+              gsap.to(item, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7, delay: 0.2 + 0.12 * i });
             });
           },
         });
@@ -419,7 +418,7 @@ export default function HomePage() {
             trigger: item,
             start: "top 85%",
             onEnter: () => {
-              gsap.fromTo(item, { y: "2rem", opacity: 0 }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.6 });
+              gsap.to(item, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.6 });
             },
             once: true,
           });
@@ -601,7 +600,7 @@ export default function HomePage() {
       {/* ================================================================
           SECTION 1: Hero
           ================================================================ */}
-      <section ref={heroSectionRef} className={`${styles.heroSection} ${styles.sectionWrapperContain}`}>
+      <section ref={heroSectionRef} data-section="hero" className={`${styles.heroSection} ${styles.sectionWrapperContain}`}>
         <div className={styles.heroStickyWrapper}>
           <div className={styles.heroStickyElement}>
             <div ref={heroMediaRef} className={styles.heroMediaWrapper}>
@@ -609,7 +608,6 @@ export default function HomePage() {
                 ref={heroVideoRef}
                 className={`${styles.heroVideo} ${styles.heroDesktopVideo}`}
                 src={`${R2_CDN}/compressed-home-intro-desktop-r3.mp4`}
-                autoPlay
                 muted
                 playsInline
                 preload="auto"
@@ -618,7 +616,6 @@ export default function HomePage() {
                 ref={heroVideoMobileRef}
                 className={`${styles.heroVideo} ${styles.heroMobileVideo}`}
                 src={`${R2_CDN}/compressed-home-intro-mobile-r3.mp4`}
-                autoPlay
                 muted
                 playsInline
                 preload="auto"

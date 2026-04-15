@@ -195,7 +195,7 @@ export default function NewsPage() {
       {/* ----------------------------------------------------------------
           Hero
           ---------------------------------------------------------------- */}
-      <section id="news-hero" className={styles.heroSection}>
+      <section id="news-hero" data-section="hero" className={styles.heroSection}>
         <div>
           <h1 className={styles.heroTitle}>
             <span role="text">Newsroom</span>
