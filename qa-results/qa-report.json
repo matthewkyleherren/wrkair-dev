@@ -2,55 +2,55 @@
   {
     "viewport": "mobile",
     "page": "index",
-    "diffPixels": 64400,
-    "diffPercent": 21.1
+    "diffPixels": 55040,
+    "diffPercent": 18.1
   },
   {
     "viewport": "mobile",
     "page": "experience",
-    "diffPixels": 250902,
-    "diffPercent": 82.4
+    "diffPixels": 254193,
+    "diffPercent": 83.5
   },
   {
     "viewport": "mobile",
     "page": "technology",
-    "diffPixels": 238740,
-    "diffPercent": 78.4
+    "diffPixels": 237423,
+    "diffPercent": 78
   },
   {
     "viewport": "mobile",
     "page": "company",
-    "diffPixels": 158392,
+    "diffPixels": 158394,
     "diffPercent": 52
   },
   {
     "viewport": "mobile",
     "page": "careers",
-    "diffPixels": 168429,
+    "diffPixels": 168408,
     "diffPercent": 55.3
   },
   {
     "viewport": "mobile",
     "page": "news",
-    "diffPixels": 136380,
+    "diffPixels": 136377,
     "diffPercent": 44.8
   },
   {
     "viewport": "mobile",
     "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
-    "diffPixels": 44278,
-    "diffPercent": 14.5
+    "diffPixels": 43834,
+    "diffPercent": 14.4
   },
   {
     "viewport": "mobile",
     "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
-    "diffPixels": 38388,
+    "diffPixels": 38404,
     "diffPercent": 12.6
   },
   {
     "viewport": "mobile",
     "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
-    "diffPixels": 41346,
+    "diffPixels": 41424,
     "diffPercent": 13.6
   },
   {
@@ -86,26 +86,26 @@
   {
     "viewport": "tablet",
     "page": "index",
-    "diffPixels": 225264,
-    "diffPercent": 28.6
+    "diffPixels": 226318,
+    "diffPercent": 28.8
   },
   {
     "viewport": "tablet",
     "page": "experience",
-    "diffPixels": 661082,
-    "diffPercent": 84.1
+    "diffPixels": 683400,
+    "diffPercent": 86.9
   },
   {
     "viewport": "tablet",
     "page": "technology",
-    "diffPixels": 598161,
-    "diffPercent": 76.1
+    "diffPixels": 567944,
+    "diffPercent": 72.2
   },
   {
     "viewport": "tablet",
     "page": "company",
-    "diffPixels": 420538,
-    "diffPercent": 53.5
+    "diffPixels": 420129,
+    "diffPercent": 53.4
   },
   {
     "viewport": "tablet",
@@ -122,7 +122,7 @@
   {
     "viewport": "tablet",
     "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
-    "diffPixels": 69144,
+    "diffPixels": 69126,
     "diffPercent": 8.8
   },
   {
@@ -170,56 +170,56 @@
   {
     "viewport": "desktop",
     "page": "index",
-    "diffPixels": 214702,
-    "diffPercent": 16.6
+    "diffPixels": 231703,
+    "diffPercent": 17.9
   },
   {
     "viewport": "desktop",
     "page": "experience",
-    "diffPixels": 1042279,
-    "diffPercent": 80.4
+    "diffPixels": 1034847,
+    "diffPercent": 79.8
   },
   {
     "viewport": "desktop",
     "page": "technology",
-    "diffPixels": 757986,
-    "diffPercent": 58.5
+    "diffPixels": 781530,
+    "diffPercent": 60.3
   },
   {
     "viewport": "desktop",
     "page": "company",
-    "diffPixels": 671209,
+    "diffPixels": 671154,
     "diffPercent": 51.8
   },
   {
     "viewport": "desktop",
     "page": "careers",
-    "diffPixels": 468244,
-    "diffPercent": 36.1
+    "diffPixels": 471343,
+    "diffPercent": 36.4
   },
   {
     "viewport": "desktop",
     "page": "news",
-    "diffPixels": 562800,
+    "diffPixels": 562847,
     "diffPercent": 43.4
   },
   {
     "viewport": "desktop",
     "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
-    "diffPixels": 141433,
-    "diffPercent": 10.9
+    "diffPixels": 141999,
+    "diffPercent": 11
   },
   {
     "viewport": "desktop",
     "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
-    "diffPixels": 129994,
+    "diffPixels": 129448,
     "diffPercent": 10
   },
   {
     "viewport": "desktop",
     "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
-    "diffPixels": 127957,
-    "diffPercent": 9.9
+    "diffPixels": 127061,
+    "diffPercent": 9.8
   },
   {
     "viewport": "desktop",
