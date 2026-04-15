@@ -96,10 +96,11 @@
 
 .heroTitleText {
   font-family: var(--font-display);
-  font-size: 12rem;
-  font-weight: 300;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
+  font-size: 8rem;
+  font-weight: 550;
+  font-variation-settings: "wght" 550;
+  line-height: 100%;
+  letter-spacing: -0.24rem;
   color: var(--color-white);
 }
 
@@ -948,9 +949,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
-  padding: 1.2rem 2.4rem;
+  padding: 1.45rem 2.6rem;
   border: 1px solid rgba(245, 244, 223, 0.3);
-  border-radius: 10rem;
+  border-radius: 12rem;
   font-family: var(--font-text);
   font-size: 1.2rem;
   font-weight: 500;
@@ -1057,7 +1058,7 @@
   }
 
   .heroTitleText {
-    font-size: 5.6rem;
+    font-size: 4.8rem;
   }
 
   .heroTitleDesktop {
