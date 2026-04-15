@@ -2,32 +2,32 @@
   {
     "viewport": "mobile",
     "page": "index",
-    "diffPixels": 73957,
-    "diffPercent": 24.3
+    "diffPixels": 64400,
+    "diffPercent": 21.1
   },
   {
     "viewport": "mobile",
     "page": "experience",
-    "diffPixels": 254396,
-    "diffPercent": 83.5
+    "diffPixels": 250902,
+    "diffPercent": 82.4
   },
   {
     "viewport": "mobile",
     "page": "technology",
-    "diffPixels": 236790,
-    "diffPercent": 77.8
+    "diffPixels": 238740,
+    "diffPercent": 78.4
   },
   {
     "viewport": "mobile",
     "page": "company",
-    "diffPixels": 158401,
+    "diffPixels": 158392,
     "diffPercent": 52
   },
   {
     "viewport": "mobile",
     "page": "careers",
-    "diffPixels": 168546,
-    "diffPercent": 55.4
+    "diffPixels": 168429,
+    "diffPercent": 55.3
   },
   {
     "viewport": "mobile",
@@ -38,20 +38,20 @@
   {
     "viewport": "mobile",
     "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
-    "diffPixels": 44085,
+    "diffPixels": 44278,
     "diffPercent": 14.5
   },
   {
     "viewport": "mobile",
     "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
-    "diffPixels": 38406,
+    "diffPixels": 38388,
     "diffPercent": 12.6
   },
   {
     "viewport": "mobile",
     "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
-    "diffPixels": 41594,
-    "diffPercent": 13.7
+    "diffPixels": 41346,
+    "diffPercent": 13.6
   },
   {
     "viewport": "mobile",
@@ -86,20 +86,20 @@
   {
     "viewport": "tablet",
     "page": "index",
-    "diffPixels": 258404,
-    "diffPercent": 32.9
+    "diffPixels": 225264,
+    "diffPercent": 28.6
   },
   {
     "viewport": "tablet",
     "page": "experience",
-    "diffPixels": 696246,
-    "diffPercent": 88.5
+    "diffPixels": 661082,
+    "diffPercent": 84.1
   },
   {
     "viewport": "tablet",
     "page": "technology",
-    "diffPixels": 572330,
-    "diffPercent": 72.8
+    "diffPixels": 598161,
+    "diffPercent": 76.1
   },
   {
     "viewport": "tablet",
@@ -122,19 +122,19 @@
   {
     "viewport": "tablet",
     "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
-    "diffPixels": 69215,
+    "diffPixels": 69144,
     "diffPercent": 8.8
   },
   {
     "viewport": "tablet",
     "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
-    "diffPixels": 51896,
+    "diffPixels": 51820,
     "diffPercent": 6.6
   },
   {
     "viewport": "tablet",
     "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
-    "diffPixels": 54538,
+    "diffPixels": 54211,
     "diffPercent": 6.9
   },
   {
@@ -170,32 +170,32 @@
   {
     "viewport": "desktop",
     "page": "index",
-    "diffPixels": 297563,
-    "diffPercent": 23
+    "diffPixels": 214702,
+    "diffPercent": 16.6
   },
   {
     "viewport": "desktop",
     "page": "experience",
-    "diffPixels": 1049937,
-    "diffPercent": 81
+    "diffPixels": 1042279,
+    "diffPercent": 80.4
   },
   {
     "viewport": "desktop",
     "page": "technology",
-    "diffPixels": 757926,
+    "diffPixels": 757986,
     "diffPercent": 58.5
   },
   {
     "viewport": "desktop",
     "page": "company",
-    "diffPixels": 669757,
-    "diffPercent": 51.7
+    "diffPixels": 671209,
+    "diffPercent": 51.8
   },
   {
     "viewport": "desktop",
     "page": "careers",
-    "diffPixels": 468884,
-    "diffPercent": 36.2
+    "diffPixels": 468244,
+    "diffPercent": 36.1
   },
   {
     "viewport": "desktop",
@@ -206,20 +206,20 @@
   {
     "viewport": "desktop",
     "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
-    "diffPixels": 141261,
+    "diffPixels": 141433,
     "diffPercent": 10.9
   },
   {
     "viewport": "desktop",
     "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
-    "diffPixels": 129988,
+    "diffPixels": 129994,
     "diffPercent": 10
   },
   {
     "viewport": "desktop",
     "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
-    "diffPixels": 127524,
-    "diffPercent": 9.8
+    "diffPixels": 127957,
+    "diffPercent": 9.9
   },
   {
     "viewport": "desktop",

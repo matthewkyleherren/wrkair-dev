@@ -43,6 +43,34 @@ export default function HomePage() {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const video = isMobile ? heroVideoMobileRef.current : heroVideoRef.current;
 
+    /* --- Page-load intro animation (matches original's 2s delay intro) --- */
+    const introTl = gsap.timeline({ delay: 0.5 });
+
+    if (heroTitleRef.current) {
+      introTl.to(heroTitleRef.current, {
+        "--animate-in": 1,
+        ease: "power2.out",
+        duration: 0.8,
+      }, 0);
+    }
+
+    if (heroSubtitleRef.current) {
+      introTl.to(heroSubtitleRef.current, {
+        "--animate-in": 1,
+        ease: "power2.out",
+        duration: 0.8,
+      }, 0.2);
+    }
+
+    if (heroTextSlidesRef.current) {
+      introTl.to(heroTextSlidesRef.current, {
+        opacity: 1,
+        y: "0rem",
+        ease: "power2.out",
+        duration: 0.6,
+      }, 0.4);
+    }
+
     /* --- Inner ScrollTrigger: drives video + text animations --- */
     const r = 1 / 14; // sizeVh=1400, r = 100/1400
 
@@ -130,6 +158,7 @@ export default function HomePage() {
     });
 
     return () => {
+      introTl.kill();
       innerSt.kill();
       fullSt.kill();
       innerTl.kill();
