@@ -1,0 +1,628 @@
+/* ==========================================================================
+   Careers Page — page.module.css
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Hero Section
+   --------------------------------------------------------------------------- */
+
+.heroSection {
+  background-color: var(--color-orange);
+  width: 100%;
+  height: fit-content;
+  color: var(--color-white);
+  padding-top: 20.3rem;
+  padding-bottom: 7.2rem;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBackground {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.heroContent {
+  z-index: 2;
+  width: 100%;
+  padding: 0 var(--base-padding);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 0px var(--gutter-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+.heroText {
+  flex-direction: column;
+  grid-column: 1 / span 12;
+  gap: 4.8rem;
+  max-width: 114rem;
+  display: flex;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 550;
+  line-height: 100%;
+  letter-spacing: -0.24rem;
+  color: var(--color-white);
+  white-space: pre-line;
+}
+
+.heroTitleMobile {
+  display: none;
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 550;
+  line-height: 95%;
+  letter-spacing: -0.144rem;
+  color: var(--color-white);
+  white-space: pre-line;
+}
+
+.heroButton {
+  display: inline-flex;
+}
+
+.heroButton svg {
+  width: 0.7em;
+  height: 0.7em;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 16.9rem;
+    padding-bottom: 6.4rem;
+  }
+
+  .heroContent {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+  }
+
+  .heroText {
+    grid-column: 1 / span 6;
+    gap: 3.2rem;
+    margin-left: 0;
+  }
+
+  .heroTitle {
+    display: none;
+  }
+
+  .heroTitleMobile {
+    display: block;
+    text-align: center;
+  }
+
+  .heroButton {
+    margin: 0 auto;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Button Styles
+   --------------------------------------------------------------------------- */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  border: 1px solid currentColor;
+  border-radius: 10rem;
+  font-family: var(--font-text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s var(--ease-out-cubic),
+    color 0.3s var(--ease-out-cubic);
+  text-decoration: none;
+}
+
+.button svg {
+  width: 0.9rem;
+  height: 0.8rem;
+}
+
+.buttonFilledLight {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.buttonFilledLight:hover {
+  background: transparent;
+  color: var(--color-white);
+}
+
+.buttonFilledTransparent {
+  background: transparent;
+  color: var(--color-white);
+  border-color: var(--color-white);
+}
+
+.buttonFilledTransparent:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.buttonFilled {
+  background: transparent;
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.buttonFilled:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------------------
+   Media Section (full-width image)
+   --------------------------------------------------------------------------- */
+
+.mediaSection {
+  position: relative;
+  width: 100%;
+}
+
+.mediaContainer {
+  width: 100%;
+}
+
+.mediaContainer img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+   Culture Section
+   --------------------------------------------------------------------------- */
+
+.cultureSection {
+  position: relative;
+  min-height: 580vh;
+  background-color: var(--color-white);
+}
+
+.cultureSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.cultureContent {
+  width: 100%;
+  padding: 0 var(--base-padding);
+  text-align: center;
+}
+
+.cultureTitleDesktop {
+  display: block;
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin-bottom: 2.4rem;
+}
+
+.cultureTitleMobile {
+  display: none;
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin-bottom: 2.4rem;
+}
+
+.cultureSubtitle {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .cultureSection {
+    min-height: 370vh;
+  }
+
+  .cultureTitleDesktop {
+    display: none;
+  }
+
+  .cultureTitleMobile {
+    display: block;
+  }
+
+  .cultureSubtitle {
+    font-size: 4.2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .cultureSection {
+    min-height: 550vh;
+  }
+}
+
+/* Culture Images */
+.cultureImages {
+  position: relative;
+  z-index: 0;
+}
+
+.cultureImage {
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.cultureImage img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cultureImage1 {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cultureImage2 {
+  max-width: 30%;
+  margin-left: 10%;
+}
+
+.cultureImage3 {
+  max-width: 60%;
+  margin-left: auto;
+  margin-right: 5%;
+}
+
+.cultureImage4 {
+  max-width: 30%;
+  margin-left: 15%;
+}
+
+.cultureImage5 {
+  max-width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .cultureImage1 {
+    max-width: 80%;
+  }
+
+  .cultureImage2 {
+    max-width: 60%;
+    margin-left: 5%;
+  }
+
+  .cultureImage3 {
+    max-width: 85%;
+  }
+
+  .cultureImage4 {
+    max-width: 55%;
+    margin-left: 5%;
+  }
+
+  .cultureImage5 {
+    max-width: 75%;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Dreamer Section
+   --------------------------------------------------------------------------- */
+
+.dreamerSection {
+  position: relative;
+  min-height: 100vh;
+}
+
+.dreamerMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.dreamerMediaDesktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dreamerMediaMobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.dreamerMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dreamerSticky {
+  position: sticky;
+  top: 3.2rem;
+  z-index: 1;
+  min-height: 100vh;
+}
+
+.dreamerInner {
+  padding: 0 var(--base-padding);
+  display: flex;
+  align-items: flex-end;
+  min-height: 100vh;
+  padding-bottom: 6rem;
+}
+
+.dreamerContent {
+  max-width: 60rem;
+}
+
+.dreamerTitle {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 2.4rem;
+}
+
+.dreamerDescription {
+  font-family: var(--font-text);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .dreamerMediaDesktop {
+    display: none;
+  }
+
+  .dreamerMediaMobile {
+    display: block;
+  }
+
+  .dreamerSticky {
+    top: 2.4rem;
+  }
+
+  .dreamerInner {
+    padding-bottom: 4rem;
+  }
+
+  .dreamerDescription {
+    font-size: 1.6rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   People of Joby Section (Video Carousel)
+   --------------------------------------------------------------------------- */
+
+.peopleSection {
+  position: relative;
+  padding: 8rem var(--base-padding);
+  background-color: var(--color-black);
+}
+
+.peopleWrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.peopleThumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-black);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.peopleThumbnail video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.peopleFooter {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 2.4rem;
+}
+
+.watchText {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+}
+
+.watchText svg {
+  width: 0.8rem;
+  height: 0.9rem;
+}
+
+.peopleLabel {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+}
+
+.peopleDuration {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-white);
+  opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+  .peopleSection {
+    padding: 4rem var(--base-padding);
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Page Entry (Bottom CTA)
+   --------------------------------------------------------------------------- */
+
+.pageEntry {
+  position: relative;
+  min-height: 100vh;
+}
+
+.pageEntryMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pageEntryMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pageEntryMediaDesktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pageEntryMediaMobile {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.pageEntrySticky {
+  position: sticky;
+  top: calc(50vh - 100px);
+  z-index: 1;
+  padding: 0 var(--base-padding);
+}
+
+.pageEntryInner {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--gutter-width);
+  min-height: 100vh;
+  align-content: center;
+}
+
+.pageEntryLeft {
+  grid-column: 1 / 9;
+}
+
+.pageEntryTitle {
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 3.2rem;
+}
+
+.pageEntryFeatures {
+  grid-column: 1 / 9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 4rem;
+}
+
+.pageEntryFeature {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .pageEntryMediaMobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pageEntryMediaDesktop {
+    display: none;
+  }
+
+  .pageEntrySticky {
+    top: 2.4rem;
+  }
+
+  .pageEntryInner {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+  }
+
+  .pageEntryLeft {
+    grid-column: 1 / -1;
+  }
+
+  .pageEntryTitle {
+    font-size: 3.2rem;
+  }
+
+  .pageEntryFeatures {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   External Arrow Icon
+   --------------------------------------------------------------------------- */
+
+.externalArrow {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.8rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}

@@ -1,0 +1,115 @@
+/* ---------------------------------------------------------------------------
+   Policy Page — matches original PolicyPage-module-scss styles
+   --------------------------------------------------------------------------- */
+
+.wrapper {
+  background-color: var(--color-white);
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: 0px var(--gutter-width);
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  padding: var(--base-padding);
+  padding-bottom: 18rem;
+}
+
+.wrapper ul {
+  list-style-type: disc;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+  }
+}
+
+/* Title — spans full width, generous vertical spacing */
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  grid-column: 1 / span 16;
+  padding-top: 35.7rem;
+  margin-bottom: 30rem;
+}
+
+@media (max-width: 768px) {
+  .title {
+    grid-column: 1 / span 6;
+    padding-top: 26.6rem;
+    margin-bottom: 21.2rem;
+  }
+}
+
+/* Separator — offset to content column range */
+.separator {
+  border-top: 1px solid var(--color-black);
+  grid-column: 5 / span 12;
+  margin-bottom: 2.4rem;
+}
+
+@media (max-width: 768px) {
+  .separator {
+    grid-column: 1 / span 6;
+  }
+}
+
+/* Content — narrower column for readability */
+.content {
+  font-family: var(--font-text);
+  grid-column: 5 / span 8;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-column: 1 / span 6;
+  }
+}
+
+/* Content element styles */
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin: 2rem 0 1rem;
+}
+
+.content p {
+  margin-bottom: 1rem;
+}
+
+.content ul,
+.content ol {
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+.content li {
+  margin-bottom: 0.5rem;
+}
+
+.content a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.content blockquote {
+  opacity: 0.8;
+  border-left: 3px solid;
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.content strong {
+  font-weight: 600;
+}
+
+.content em {
+  font-style: italic;
+}

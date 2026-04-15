@@ -1,0 +1,873 @@
+/* ==========================================================================
+   Company Page — page.module.css
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Hero Section
+   --------------------------------------------------------------------------- */
+
+.heroSection {
+  position: relative;
+  min-height: 250vh;
+  width: 100%;
+}
+
+.heroSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: 7.2rem;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  text-align: center;
+  max-width: 120rem;
+  padding: 0 var(--base-padding);
+  position: relative;
+  z-index: 2;
+}
+
+.heroBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.blueLayer {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-blue);
+}
+
+.orangeLayer {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-orange);
+  clip-path: inset(0 0 50% 0);
+}
+
+.whiteLayer {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-white);
+  clip-path: inset(0 0 75% 0);
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 200vh;
+  }
+
+  .heroTitle {
+    font-size: 4.2rem;
+    line-height: 1.1;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Outer Wrapper
+   --------------------------------------------------------------------------- */
+
+.timelineOuter {
+  position: relative;
+  background-color: var(--color-white);
+  z-index: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Background Images
+   --------------------------------------------------------------------------- */
+
+.timelineBackground {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.imageSlider {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.imageSliderItem {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+}
+
+.imageSliderItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Intro Section
+   --------------------------------------------------------------------------- */
+
+.introContent {
+  position: relative;
+  z-index: 1;
+}
+
+.introSection {
+  min-height: 200vh;
+  position: relative;
+}
+
+.introSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.introWrapper {
+  width: 100%;
+  padding: 0 var(--base-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introLabels {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.introLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  opacity: 0.7;
+}
+
+.introTitles {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.introTitleLeft h2,
+.introTitleRight h2 {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+}
+
+.introTitleRightReplace {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .introSection {
+    min-height: 250vh;
+  }
+
+  .introTitleLeft h2,
+  .introTitleRight h2 {
+    font-size: 4.8rem;
+  }
+
+  .introLabels {
+    margin-bottom: 2.4rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Content
+   --------------------------------------------------------------------------- */
+
+.timelineContent {
+  position: relative;
+  z-index: 1;
+  padding-bottom: 4rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Section (Mythology)
+   --------------------------------------------------------------------------- */
+
+.timelineWrapper {
+  padding: 0 var(--base-padding);
+}
+
+/* Intro timeline header */
+.timelineHeader {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--gutter-width);
+  padding: 2.4rem 0;
+  border-top: 1px solid rgba(14, 22, 32, 0.15);
+  align-items: start;
+}
+
+.headerColumn1 {
+  grid-column: 1 / 3;
+}
+
+.headerColumn2 {
+  grid-column: 3 / 5;
+}
+
+.headerColumn3Intro {
+  grid-column: 5 / 12;
+  text-align: center;
+}
+
+.headerColumnLast {
+  grid-column: 13 / -1;
+  text-align: right;
+}
+
+.headerLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Titles (large scrolling text)
+   --------------------------------------------------------------------------- */
+
+.timelineTitle {
+  padding: 12rem 0;
+}
+
+.timelineTitleText {
+  font-family: var(--font-display);
+  font-size: 5.6rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  max-width: 100%;
+}
+
+.timelineTitleText + .timelineTitleText {
+  margin-top: 4rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Body Text
+   --------------------------------------------------------------------------- */
+
+.timelineBodyText {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-black);
+  max-width: 60rem;
+}
+
+.timelineBodyText + .timelineBodyText {
+  margin-top: 2rem;
+}
+
+/* body columns within headers */
+.headerBodies {
+  grid-column: 4 / 12;
+}
+
+.headerBodiesAlt {
+  grid-column: 3 / 8;
+}
+
+/* ---------------------------------------------------------------------------
+   Timeline Past Intro (block 1-3)
+   --------------------------------------------------------------------------- */
+
+.timelinePastIntro {
+  padding-bottom: 4rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Breakthroughs Section (block 5 timeline with years)
+   --------------------------------------------------------------------------- */
+
+.breakthroughsSection {
+  min-height: 650vh;
+  position: relative;
+}
+
+.breakthroughsSticky {
+  position: sticky;
+  top: 0;
+  min-height: 100vh;
+  padding-top: 8rem;
+}
+
+.breakthroughsHeader {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--gutter-width);
+  padding: 2.4rem 0;
+  border-top: 1px solid rgba(14, 22, 32, 0.15);
+  align-items: start;
+}
+
+.breakthroughsLabel {
+  grid-column: 1 / 3;
+}
+
+/* Year items row */
+.yearItems {
+  grid-column: 3 / -1;
+  display: flex;
+  gap: 3.2rem;
+  flex-wrap: wrap;
+}
+
+.yearItem {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  opacity: 0.25;
+  transition: opacity 0.4s var(--ease-out-cubic);
+  cursor: pointer;
+}
+
+.yearItemActive {
+  opacity: 1;
+}
+
+/* Month items */
+.monthsRow {
+  grid-column: 3 / -1;
+  display: flex;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.monthItem {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  opacity: 0.4;
+  transition: opacity 0.4s var(--ease-out-cubic);
+  cursor: pointer;
+}
+
+.monthItemActive {
+  opacity: 1;
+}
+
+/* Timeline item description */
+.timelineItemContent {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--gutter-width);
+  padding: 6rem 0 4rem;
+}
+
+.timelineItemTitle {
+  grid-column: 3 / 8;
+  font-family: var(--font-display);
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+}
+
+.timelineItemDescription {
+  grid-column: 9 / 15;
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-black);
+}
+
+.timelineItemCta {
+  margin-top: 2.4rem;
+}
+
+@media (max-width: 768px) {
+  .timelineWrapper {
+    padding: 0 var(--base-padding);
+  }
+
+  .timelineHeader {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+  }
+
+  .headerColumn1 {
+    grid-column: 1 / 3;
+  }
+
+  .headerColumn2 {
+    grid-column: 3 / 5;
+  }
+
+  .headerColumn3Intro {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  .headerColumnLast {
+    grid-column: 5 / -1;
+    text-align: right;
+  }
+
+  .timelineTitle {
+    padding: 6rem 0;
+  }
+
+  .timelineTitleText {
+    font-size: 3.2rem;
+  }
+
+  .breakthroughsHeader {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+  }
+
+  .breakthroughsLabel {
+    grid-column: 1 / -1;
+  }
+
+  .yearItems {
+    grid-column: 1 / -1;
+    gap: 1.6rem;
+  }
+
+  .yearItem {
+    font-size: 1.8rem;
+  }
+
+  .monthsRow {
+    grid-column: 1 / -1;
+  }
+
+  .timelineItemContent {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+    padding: 3.2rem 0 2.4rem;
+  }
+
+  .timelineItemTitle {
+    grid-column: 1 / -1;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .timelineItemDescription {
+    grid-column: 1 / -1;
+  }
+
+  .headerBodies {
+    grid-column: 1 / -1;
+  }
+
+  .headerBodiesAlt {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   About Section
+   --------------------------------------------------------------------------- */
+
+.aboutSection {
+  padding: 0 var(--base-padding);
+  background-color: var(--color-white);
+  position: relative;
+  z-index: 1;
+}
+
+/* Joby Today */
+.todayBlock {
+  padding: 12rem 0 8rem;
+  border-top: 1px solid rgba(14, 22, 32, 0.15);
+}
+
+.todayLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  margin-bottom: 4rem;
+}
+
+.todayTitle {
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+  max-width: 100rem;
+  margin-bottom: 8rem;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gutter-width);
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.statLabel {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  opacity: 0.6;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .todayBlock {
+    padding: 6rem 0 4rem;
+  }
+
+  .todayTitle {
+    font-size: 3.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.2rem;
+  }
+
+  .statValue {
+    font-size: 4.8rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Info Sections (Careers + Investors)
+   --------------------------------------------------------------------------- */
+
+.infoSection {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--gutter-width);
+  padding: 8rem 0;
+  border-top: 1px solid rgba(14, 22, 32, 0.15);
+  align-items: start;
+}
+
+.infoLabel {
+  grid-column: 1 / 3;
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-black);
+}
+
+.infoContent {
+  grid-column: 3 / 9;
+}
+
+.infoTitle {
+  font-family: var(--font-display);
+  font-size: 3.6rem;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  margin-bottom: 2rem;
+}
+
+.infoDescription {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-black);
+  margin-bottom: 3.2rem;
+}
+
+.infoMedia {
+  grid-column: 10 / -1;
+  position: relative;
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.infoMedia img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  border: 1px solid var(--color-black);
+  border-radius: 10rem;
+  font-family: var(--font-text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s var(--ease-out-cubic), color 0.3s var(--ease-out-cubic);
+  text-decoration: none;
+}
+
+.button:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.button svg {
+  width: 0.9rem;
+  height: 0.8rem;
+}
+
+.buttonLight {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.buttonLight:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.buttonTransparent {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.buttonTransparent:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+@media (max-width: 768px) {
+  .infoSection {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+    padding: 4rem 0;
+  }
+
+  .infoLabel {
+    grid-column: 1 / -1;
+    margin-bottom: 2rem;
+  }
+
+  .infoContent {
+    grid-column: 1 / -1;
+    margin-bottom: 3.2rem;
+  }
+
+  .infoTitle {
+    font-size: 2.8rem;
+  }
+
+  .infoMedia {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Page Entry (Bottom CTA)
+   --------------------------------------------------------------------------- */
+
+.pageEntry {
+  position: relative;
+  min-height: 100vh;
+}
+
+.pageEntryMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.pageEntryMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pageEntryMediaMobile {
+  display: none;
+}
+
+.pageEntryMediaDesktop {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pageEntrySticky {
+  position: sticky;
+  top: calc(50vh - 100px);
+  z-index: 1;
+  padding: 0 var(--base-padding);
+}
+
+.pageEntryInner {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  gap: var(--gutter-width);
+  min-height: 100vh;
+  align-content: center;
+}
+
+.pageEntryLeft {
+  grid-column: 1 / 9;
+}
+
+.pageEntryTitle {
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  margin-bottom: 3.2rem;
+}
+
+.pageEntryFeatures {
+  grid-column: 1 / 9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 4rem;
+}
+
+.pageEntryFeature {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .pageEntryMediaMobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .pageEntryMediaDesktop {
+    display: none;
+  }
+
+  .pageEntrySticky {
+    top: 2.4rem;
+  }
+
+  .pageEntryInner {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+  }
+
+  .pageEntryLeft {
+    grid-column: 1 / -1;
+  }
+
+  .pageEntryTitle {
+    font-size: 3.2rem;
+  }
+
+  .pageEntryFeatures {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   External Arrow Icon (inline)
+   --------------------------------------------------------------------------- */
+
+.externalArrow {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.8rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+/* ---------------------------------------------------------------------------
+   Mobile-only / Desktop-only helpers
+   --------------------------------------------------------------------------- */
+
+.desktopOnly {
+  display: block;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+}

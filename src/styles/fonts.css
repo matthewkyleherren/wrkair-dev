@@ -1,0 +1,41 @@
+/* ==========================================================================
+   @font-face declarations — Joby Sans variable fonts
+   ========================================================================== */
+
+/* Joby Sans Text — variable weight 100-900 */
+@font-face {
+  font-family: jobyText;
+  src: url("/fonts/JobySans_Text_Variable-s.p.5174080c.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Joby Sans Text fallback — Arial with size-adjust */
+@font-face {
+  font-family: jobyText Fallback;
+  src: local(Arial);
+  ascent-override: 89.24%;
+  descent-override: 22.56%;
+  line-gap-override: 0.0%;
+  size-adjust: 106.48%;
+}
+
+/* Joby Sans Display — variable weight 100-900 */
+@font-face {
+  font-family: jobyDisplay;
+  src: url("/fonts/JobySans_Display_Variable-s.p.cdf48502.woff2") format("woff2");
+  font-display: swap;
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Joby Sans Display fallback — Arial with size-adjust */
+@font-face {
+  font-family: jobyDisplay Fallback;
+  src: local(Arial);
+  ascent-override: 96.43%;
+  descent-override: 24.38%;
+  line-gap-override: 0.0%;
+  size-adjust: 98.54%;
+}

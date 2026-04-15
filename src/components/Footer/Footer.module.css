@@ -1,0 +1,588 @@
+/* ==========================================================================
+   Footer — CSS Module
+   Pixel-accurate port of the original compiled CSS
+   ========================================================================== */
+
+/* ---- Outer wrapper ---- */
+.footerWrapper {
+  background-color: var(--color-blue);
+  height: fit-content;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ---- Footer grid ---- */
+.footer {
+  --footer-up: 0vh;
+  color: var(--color-white);
+  will-change: transform;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  align-content: space-between;
+  gap: 0px var(--gutter-width);
+  height: fit-content;
+  min-height: 100vh;
+  padding: 0 var(--base-padding);
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  position: relative;
+  padding: 3.8rem var(--base-padding) 8.9rem var(--base-padding);
+  grid-auto-rows: min-content;
+}
+
+.footer::after {
+  content: "";
+  background-color: var(--color-dark-blue);
+  width: 100%;
+  height: 3.4rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer li {
+  width: fit-content;
+  position: relative;
+}
+
+.footer li::after {
+  content: "";
+  background-color: var(--color-white);
+  z-index: 1;
+  width: 100%;
+  height: 1.5px;
+  transition: var(--link-transition);
+  transform-origin: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+}
+
+.footer li:hover::after {
+  transform-origin: 0;
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: repeat(var(--grid-columns-mobile), 1fr);
+    gap: var(--gutter-width-mobile);
+    height: fit-content;
+    min-height: 100svh;
+    padding: 2.4rem var(--base-padding) 3.2rem var(--base-padding);
+    gap: 0;
+  }
+
+  .footer::after {
+    display: none;
+  }
+}
+
+/* ---- Sub-links (Privacy, Terms etc.) ---- */
+.footerSubLinks {
+  transform: translateY(var(--footer-up));
+  flex-direction: column;
+  grid-column: 1 / span 2;
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.footerSubLinks li::after {
+  height: 1px;
+}
+
+.footerSubLinks li {
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .footerSubLinks {
+    grid-column: 1 / span 6;
+    grid-template-columns: 10.8rem 20rem;
+    column-gap: 1rem;
+    margin-bottom: 9.3rem;
+    display: grid;
+  }
+}
+
+/* ---- Copyright ---- */
+.footerCopyright {
+  opacity: 0.5;
+}
+
+.footerCopyright::after {
+  display: none;
+}
+
+/* ---- Main links (Discover) ---- */
+.footerMainLinks {
+  transform: translateY(var(--footer-up));
+  flex-direction: column;
+  grid-area: 1 / 11 / auto / span 2;
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.footerMainLinks li {
+  grid-column: 2;
+}
+
+@media (max-width: 768px) {
+  .footerMainLinks {
+    grid-area: 2 / 1 / auto / span 6;
+    grid-template-columns: 10.8rem 20rem;
+    column-gap: 1rem;
+    margin-bottom: 4rem;
+    display: grid;
+  }
+}
+
+/* ---- Section label ---- */
+.footerLabel {
+  margin-bottom: 3.2rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .footerLabel {
+    margin-bottom: 0;
+    grid-column: 1 !important;
+  }
+}
+
+/* ---- Explore links ---- */
+.footerExploreLinks {
+  transform: translateY(var(--footer-up));
+  flex-direction: column;
+  grid-area: 1 / 13 / auto / span 2;
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.footerExploreLinks li {
+  grid-column: 2;
+}
+
+@media (max-width: 768px) {
+  .footerExploreLinks {
+    grid-area: 3 / 1 / auto / span 6;
+    grid-template-columns: 10.8rem 20rem;
+    column-gap: 1rem;
+    margin-bottom: 4rem;
+    display: grid;
+  }
+}
+
+/* ---- Social links ---- */
+.footerSocialLinks {
+  transform: translateY(var(--footer-up));
+  flex-direction: column;
+  grid-area: 1 / 15 / auto / span 2;
+  list-style: none;
+  display: flex;
+  position: relative;
+}
+
+.footerSocialLinks li {
+  grid-column: 2;
+}
+
+@media (max-width: 768px) {
+  .footerSocialLinks {
+    grid-area: 4 / 1 / auto / span 6;
+    grid-template-columns: 10.8rem 20rem;
+    column-gap: 1rem;
+    margin-bottom: 9.3rem;
+    display: grid;
+  }
+}
+
+/* ---- Logo ---- */
+.logoContainer {
+  width: fit-content;
+  height: fit-content;
+  transition:
+    display 0.4s allow-discrete,
+    opacity 0.4s var(--ease-out-cubic);
+  grid-area: 2 / 1 / auto / span 4;
+  align-self: end;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .logoContainer {
+    aspect-ratio: 52 / 32;
+    grid-area: 5 / 1 / auto / span 1;
+    width: auto;
+    position: relative;
+  }
+}
+
+.logoDesktop {
+  width: 17.6rem;
+  height: 5.2rem;
+}
+
+.logoDesktop svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .logoDesktop {
+    display: none;
+  }
+}
+
+.logoMobile {
+  aspect-ratio: 52 / 30;
+  width: 100%;
+  max-width: 6.6rem;
+  height: 100%;
+}
+
+.logoMobile svg {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 769px) {
+  .logoMobile {
+    display: none;
+  }
+}
+
+/* ---- Newsletter ---- */
+.newsletter {
+  flex-direction: column;
+  grid-area: 2 / 11 / auto / span 5;
+  gap: 0.2rem;
+  display: flex;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .newsletter {
+    grid-area: 5 / 3 / auto / span 4;
+  }
+}
+
+.newsletterTitle {
+  font-family: var(--font-display);
+  font-variation-settings: "wght" 500;
+  letter-spacing: -0.056rem;
+  transition:
+    color 0.4s var(--ease-in-out-cubic),
+    transform 0.4s var(--ease-out-cubic);
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@media (max-width: 768px) {
+  .newsletterTitle {
+    letter-spacing: -0.036rem;
+    font-size: 1.8rem;
+    line-height: 120%;
+  }
+}
+
+.newsletterForm {
+  width: fit-content;
+  transition: transform 0.4s var(--ease-out-cubic);
+  display: flex;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .newsletterForm {
+    width: 100%;
+  }
+}
+
+.newsletterForm input {
+  appearance: none;
+  border: none;
+  border-bottom: 1.5px solid var(--color-dark-blue-ui);
+  width: 16ch;
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-variation-settings: "wght" 500;
+  letter-spacing: -0.056rem;
+  transition:
+    width 0.4s var(--ease-in-out-cubic),
+    border-bottom 0.4s var(--ease-in-out-cubic),
+    transform 0.4s var(--ease-out-cubic);
+  caret-color: var(--color-white);
+  background: transparent;
+  border-radius: 0;
+  outline: none;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.newsletterForm input:not(:placeholder-shown) {
+  width: 41.7rem;
+  max-width: calc(
+    var(--grid-column-width) * 6 + var(--gutter-width) * 5
+  );
+  border-bottom: 1.5px solid var(--color-white);
+  padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+  .newsletterForm input:not(:placeholder-shown) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.newsletterForm input::placeholder {
+  color: var(--color-dark-blue-ui);
+}
+
+.newsletterForm input:hover {
+  border-bottom: 1.5px solid var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .newsletterForm input {
+    letter-spacing: -0.036rem;
+    width: 16ch;
+    font-size: 1.8rem;
+    line-height: 120%;
+  }
+}
+
+/* Autofill overrides */
+.newsletterForm input:-webkit-autofill,
+.newsletterForm input:-webkit-autofill:hover,
+.newsletterForm input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-blue) inset;
+  -webkit-text-fill-color: #fff;
+  transition: background-color 9999s ease-out;
+}
+
+/* ---- Newsletter submit ---- */
+.newsletterSubmit {
+  opacity: 1;
+  width: 1.8rem;
+  height: 1.8rem;
+  color: var(--color-dark-blue-ui);
+  transition:
+    opacity 0.4s var(--ease-in-out-cubic),
+    transform 0.4s var(--ease-out-cubic);
+  cursor: pointer;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .newsletterSubmit {
+    right: unset;
+    opacity: 1;
+    left: 16.5rem;
+  }
+}
+
+.newsletterSubmit svg {
+  width: 100%;
+  height: 100%;
+  transition: color 0.2s var(--ease-in-out-cubic);
+  color: currentColor;
+  transform: scaleX(-1);
+}
+
+@keyframes translate-out-in-x-newsletter {
+  0% {
+    opacity: 1;
+    transform: translate(0) scaleX(-1);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(0.5rem) scaleX(-1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0) scaleX(-1);
+  }
+}
+
+.newsletterSubmit:hover svg {
+  animation: translate-out-in-x-newsletter 0.6s var(--ease-snappy);
+}
+
+.newsletterForm:has(input:not(:placeholder-shown)) .newsletterSubmit {
+  opacity: 1;
+  pointer-events: auto;
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .newsletterForm:has(input:not(:placeholder-shown)) .newsletterSubmit {
+    left: unset;
+    right: 0;
+  }
+}
+
+/* ---- Title colour shift when typing ---- */
+.newsletter:has(input:not(:placeholder-shown)) .newsletterTitle,
+.newsletter:has(.newsletterSuccess) .newsletterTitle {
+  color: var(--color-dark-blue-ui);
+}
+
+/* ---- Title/form slide up when typing ---- */
+.newsletter:has(input:not(:placeholder-shown)) .newsletterTitle,
+.newsletter:has(input:not(:placeholder-shown)) .newsletterForm {
+  transform: translateY(-8.6rem);
+}
+
+@media (max-width: 768px) {
+  .newsletter:has(input:not(:placeholder-shown)) .newsletterTitle,
+  .newsletter:has(input:not(:placeholder-shown)) .newsletterForm {
+    transform: translateY(-7rem);
+  }
+}
+
+/* ---- Disclaimer visibility ---- */
+.newsletter:has(input:not(:placeholder-shown)) .newsletterDisclaimer {
+  opacity: 1;
+}
+
+.newsletter:has(input:not(:placeholder-shown)) .newsletterDisclaimer a {
+  pointer-events: visible;
+}
+
+/* ---- Mobile: hide logo when typing ---- */
+@media (max-width: 768px) {
+  .footer:has(.newsletter input:not(:placeholder-shown)) .logoContainer {
+    opacity: 0;
+    display: none;
+  }
+
+  .footer:has(.newsletter input:not(:placeholder-shown)) .newsletter {
+    transition: all 0.4s var(--ease-out-cubic);
+    grid-column: 1 / span 6;
+  }
+}
+
+/* ---- Newsletter disclaimer ---- */
+.newsletterDisclaimer {
+  pointer-events: none;
+  opacity: 0;
+  max-width: 36.6rem;
+  transition: opacity 0.4s var(--ease-out-cubic);
+  margin-top: 4.8rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.newsletterDisclaimer a {
+  pointer-events: none;
+  text-decoration-skip-ink: auto;
+  text-underline-offset: 12.5%;
+  text-underline-position: from-font;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .newsletterDisclaimer {
+    margin-top: 3.2rem;
+  }
+}
+
+.newsletterDisclaimer span {
+  letter-spacing: -0.024rem;
+  font-size: 1.2rem !important;
+  line-height: 140% !important;
+}
+
+/* ---- Newsletter error ---- */
+.newsletterError {
+  color: #ffcc54;
+  white-space: nowrap;
+  transition:
+    opacity 0.2s var(--ease-in-out-cubic),
+    transform 0.4s var(--ease-out-cubic);
+  position: absolute;
+  top: 100%;
+}
+
+/* ---- Newsletter success ---- */
+.newsletterSuccess {
+  color: var(--color-white);
+  font-family: var(--font-display);
+  font-variation-settings: "wght" 500;
+  letter-spacing: -0.056rem;
+  transition: color 0.4s var(--ease-in-out-cubic);
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@media (max-width: 768px) {
+  .newsletterSuccess {
+    letter-spacing: -0.036rem;
+    font-size: 1.8rem;
+    line-height: 120%;
+  }
+}
+
+/* ---- Typography tokens used inline ---- */
+.captionSmall {
+  font-family: var(--font-text);
+  font-variation-settings: "wght" 450;
+  letter-spacing: -0.024rem;
+  font-size: 1.2rem;
+  font-weight: 450;
+  line-height: 120%;
+  font-style: normal;
+  white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+  .captionSmall {
+    letter-spacing: -0.02rem;
+    font-size: 1rem;
+    line-height: 120%;
+  }
+}
+
+.footerLink {
+  font-family: var(--font-text);
+  font-variation-settings: "wght" 450;
+  letter-spacing: -0.036rem;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 450;
+  line-height: 140%;
+  white-space: pre-line;
+}
+
+@media (max-width: 768px) {
+  .footerLink {
+    letter-spacing: -0.032rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: 140%;
+  }
+}

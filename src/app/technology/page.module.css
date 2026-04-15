@@ -1,0 +1,1629 @@
+/* ==========================================================================
+   Technology Page — CSS Module
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   Page wrapper
+   --------------------------------------------------------------------------- */
+
+.pageWrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------------------------
+   Hero Section
+   --------------------------------------------------------------------------- */
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.heroStickyWrapper {
+  position: relative;
+  height: 400vh;
+}
+
+.heroSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroMediaWrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heroMediaInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.heroVideoDesktop {
+  display: block;
+}
+
+.heroVideoMobile {
+  display: none;
+}
+
+.heroContent {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: var(--z-above);
+  pointer-events: none;
+  padding: 0 var(--base-padding);
+}
+
+.heroTitle {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heroTitleText {
+  font-family: var(--font-display);
+  font-size: 12rem;
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+.heroBody {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+  opacity: 0.8;
+  text-align: center;
+  max-width: 50rem;
+  margin-bottom: 6rem;
+}
+
+.heroTagline {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  margin-bottom: 6rem;
+}
+
+.heroTaglineLeft,
+.heroTaglineRight {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-white);
+}
+
+.heroTextBlocks {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  flex-wrap: wrap;
+}
+
+.heroTextBlock {
+  text-align: center;
+}
+
+.heroTextBlockTitle {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  opacity: 0.5;
+  margin-bottom: 0.6rem;
+}
+
+.heroTextBlockSubtitle {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------------------
+   Aircraft Section
+   --------------------------------------------------------------------------- */
+
+.aircraftSection {
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 0;
+}
+
+.aircraftScroller {
+  position: relative;
+}
+
+/* --- Intro sub-section --- */
+
+.aircraftIntro {
+  position: relative;
+  padding: 20rem var(--base-padding) 10rem;
+}
+
+.aircraftIntroFixed {
+  position: relative;
+}
+
+.aircraftIntroMediaDesktop {
+  display: block;
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto 6rem;
+}
+
+.aircraftIntroMediaMobile {
+  display: none;
+}
+
+.aircraftIntroCanvas {
+  width: 100%;
+  height: auto;
+}
+
+.aircraftNumberedTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-bottom: 4rem;
+}
+
+.aircraftNumberedNumber {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.aircraftTitle {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.aircraftSubtitle {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 60rem;
+  margin-bottom: 8rem;
+}
+
+/* --- Text blocks (features) --- */
+
+.aircraftTextBlocks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem;
+  max-width: 100rem;
+}
+
+.aircraftTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.aircraftTextBlockTitle {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.aircraftTextBlockText {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+/* --- Modes sub-section --- */
+
+.aircraftModes {
+  position: relative;
+  padding: 10rem var(--base-padding) 20rem;
+}
+
+.aircraftModesSticky {
+  position: relative;
+}
+
+.aircraftModesLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 2rem;
+}
+
+.aircraftModeSelectors {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.aircraftModeSelector {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  border-radius: 10rem;
+  border: 1px solid rgba(14, 22, 32, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease-out-cubic),
+    color 0.3s var(--ease-out-cubic),
+    border-color 0.3s var(--ease-out-cubic);
+  background: transparent;
+  color: var(--color-black);
+}
+
+.aircraftModeSelector.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.aircraftModeContent {
+  display: none;
+}
+
+.aircraftModeContent.active {
+  display: block;
+}
+
+.aircraftModeStats {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.aircraftModeStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.aircraftModeStatLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.aircraftModeStatValue {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.aircraftModeDescription {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 60rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Safety Slider Section
+   --------------------------------------------------------------------------- */
+
+.safetySection {
+  position: relative;
+  background-color: var(--color-white);
+  padding: 20rem 0;
+}
+
+.safetyHeader {
+  padding: 0 var(--base-padding);
+  margin-bottom: 8rem;
+}
+
+.safetyNumberedTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.safetyNumberedNumber {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.safetyTitle {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.safetyLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.safetySlidesContainer {
+  position: relative;
+}
+
+.safetyImageSlider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.safetyImageSliderMask {
+  overflow: hidden;
+  border-radius: 1.2rem;
+  margin: 0 var(--base-padding);
+}
+
+.safetyImageSliderInner {
+  display: flex;
+  transition: transform 0.8s var(--ease-out-quart);
+}
+
+.safetyImageSliderScale {
+  min-width: 100%;
+  position: relative;
+}
+
+.safetySlideImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2001 / 2003;
+  object-fit: cover;
+  border-radius: 1.2rem;
+}
+
+.safetySlideTag {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background-color: rgba(14, 22, 32, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 0.8rem 1.6rem;
+  border-radius: 10rem;
+}
+
+.safetySlideContent {
+  display: flex;
+  gap: 4rem;
+  padding: 4rem var(--base-padding);
+  align-items: flex-start;
+}
+
+.safetySlideTitle {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  flex: 0 0 auto;
+  width: 30%;
+}
+
+.safetySlideBody {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.safetyPagination {
+  display: flex;
+  gap: 0.8rem;
+  padding: 3rem var(--base-padding);
+}
+
+.safetyPaginationItem {
+  width: 4rem;
+  height: 0.3rem;
+  background-color: var(--color-black);
+  opacity: 0.2;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  transition: opacity 0.3s var(--ease-out-cubic);
+}
+
+.safetyPaginationItem.active {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   Sound Section
+   --------------------------------------------------------------------------- */
+
+.soundSection {
+  position: relative;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 20rem 0;
+  overflow: hidden;
+}
+
+.soundWrapper {
+  padding: 0 var(--base-padding);
+}
+
+.soundNumberedTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.soundNumberedNumber {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.soundTitle {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 6rem;
+}
+
+.soundVideoWrapper {
+  position: relative;
+  width: 100%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  margin-bottom: 6rem;
+  aspect-ratio: 16 / 9;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.soundVideoInner {
+  width: 100%;
+  height: 100%;
+}
+
+.soundPropellerWrapper {
+  display: flex;
+  gap: 6rem;
+  margin-bottom: 6rem;
+}
+
+.soundInfoBlock {
+  flex: 1;
+}
+
+.soundInfoLabel {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-white);
+  margin-bottom: 1.2rem;
+}
+
+.soundInfoText {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+  opacity: 0.6;
+}
+
+.soundDescription {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+  max-width: 60rem;
+  margin-bottom: 4rem;
+}
+
+.soundCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  border: 1px solid rgba(245, 244, 223, 0.3);
+  border-radius: 10rem;
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: background-color 0.3s var(--ease-out-cubic),
+    border-color 0.3s var(--ease-out-cubic);
+}
+
+.soundCta:hover {
+  background-color: rgba(245, 244, 223, 0.1);
+  border-color: rgba(245, 244, 223, 0.5);
+}
+
+.soundBottomContent {
+  display: flex;
+  gap: 4rem;
+  margin-top: 6rem;
+}
+
+.soundBottomLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.soundBottomLocation {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ---------------------------------------------------------------------------
+   Engineering Section
+   --------------------------------------------------------------------------- */
+
+.engineeringSection {
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 20rem 0;
+  overflow: hidden;
+}
+
+.engineeringHeader {
+  padding: 0 var(--base-padding);
+  margin-bottom: 8rem;
+}
+
+.engineeringNumberedTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.engineeringNumberedNumber {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.engineeringTitle {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 4rem;
+}
+
+.engineeringIntro {
+  display: flex;
+  gap: 6rem;
+  margin-bottom: 4rem;
+}
+
+.engineeringIntroLeft {
+  flex: 1;
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.engineeringIntroRight {
+  flex: 1;
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.engineeringMediaLabels {
+  display: flex;
+  gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.engineeringMediaLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.engineeringMediaTransition {
+  position: relative;
+  width: 100%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  margin-bottom: 8rem;
+}
+
+.engineeringMediaImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 1.2rem;
+}
+
+/* --- Process sub-section --- */
+
+.engineeringProcess {
+  padding: 0 var(--base-padding);
+  margin-bottom: 10rem;
+}
+
+.engineeringProcessLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 4rem;
+}
+
+.engineeringProcessTitle {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 80rem;
+  margin-bottom: 6rem;
+}
+
+.engineeringProcessContents {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.engineeringProcessItem {
+  display: flex;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.engineeringProcessItemLabel {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+  flex: 0 0 6rem;
+}
+
+.engineeringProcessItemTitle {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+
+.engineeringProcessItemText {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.7;
+  max-width: 60rem;
+}
+
+/* --- Highlights sub-section --- */
+
+.engineeringHighlights {
+  padding: 0 var(--base-padding);
+}
+
+.engineeringHighlightsLabel {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-bottom: 4rem;
+}
+
+.engineeringHighlightsIntro {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 60rem;
+  margin-bottom: 6rem;
+}
+
+.engineeringHighlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.engineeringHighlightItem {
+  position: relative;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  aspect-ratio: 3240 / 1929;
+}
+
+.engineeringHighlightImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.engineeringHighlightOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(14, 22, 32, 0.8) 0%,
+    rgba(14, 22, 32, 0) 60%
+  );
+  display: flex;
+  align-items: flex-end;
+  padding: 2.4rem;
+}
+
+.engineeringHighlightText {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-white);
+}
+
+/* ---------------------------------------------------------------------------
+   Sustainability Section
+   --------------------------------------------------------------------------- */
+
+.sustainabilitySection {
+  position: relative;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 20rem 0;
+  overflow: hidden;
+}
+
+.sustainabilityWrapper {
+  padding: 0 var(--base-padding);
+}
+
+.sustainabilityNumberedTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.sustainabilityNumberedNumber {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.sustainabilityTitle {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 6rem;
+}
+
+.sustainabilityBackground {
+  position: relative;
+  width: 100%;
+  margin-bottom: 8rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+}
+
+.sustainabilityBackgroundImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.sustainabilityBackgroundImageDesktop {
+  display: block;
+}
+
+.sustainabilityBackgroundImageMobile {
+  display: none;
+}
+
+.sustainabilitySlides {
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.sustainabilitySlide {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sustainabilitySlideLabel {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.sustainabilitySlideTitle {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.sustainabilityBigNumber {
+  font-family: var(--font-display);
+  font-size: 12rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+.sustainabilityBigNumberReduced {
+  font-family: var(--font-display);
+  font-size: 8rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-white);
+}
+
+.sustainabilitySlideSubtitle {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.7;
+}
+
+.sustainabilitySlideDescription {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.5;
+  opacity: 0.5;
+  max-width: 60rem;
+  margin-top: 2rem;
+}
+
+.sustainabilityEndText {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 50rem;
+  margin-top: 6rem;
+  margin-bottom: 4rem;
+}
+
+.sustainabilityCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  border: 1px solid rgba(245, 244, 223, 0.3);
+  border-radius: 10rem;
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: background-color 0.3s var(--ease-out-cubic),
+    border-color 0.3s var(--ease-out-cubic);
+}
+
+.sustainabilityCta:hover {
+  background-color: rgba(245, 244, 223, 0.1);
+  border-color: rgba(245, 244, 223, 0.5);
+}
+
+/* ---------------------------------------------------------------------------
+   Specs Section
+   --------------------------------------------------------------------------- */
+
+.specsSection {
+  position: relative;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 20rem 0;
+  overflow: hidden;
+}
+
+.specsWrapper {
+  padding: 0 var(--base-padding);
+}
+
+.specsNumberedTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.specsNumberedNumber {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.4;
+}
+
+.specsTitle {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.specsSubtitle {
+  font-family: var(--font-text);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 60rem;
+  opacity: 0.7;
+  margin-bottom: 6rem;
+}
+
+/* Specs tab navigation */
+.specsTabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid rgba(14, 22, 32, 0.1);
+  margin-bottom: 6rem;
+}
+
+.specsTab {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: 1.6rem 2.4rem;
+  cursor: pointer;
+  opacity: 0.4;
+  border-bottom: 2px solid transparent;
+  transition: opacity 0.3s var(--ease-out-cubic),
+    border-color 0.3s var(--ease-out-cubic);
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  color: var(--color-black);
+}
+
+.specsTab.active {
+  opacity: 1;
+  border-bottom-color: var(--color-black);
+}
+
+/* Specs content panels */
+.specsContent {
+  position: relative;
+}
+
+.specsPanel {
+  display: none;
+}
+
+.specsPanel.active {
+  display: block;
+}
+
+/* Summary panel */
+.specsSummary {
+  display: flex;
+  gap: 6rem;
+}
+
+.specsSummaryLeft {
+  flex: 1;
+}
+
+.specsSummaryRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specsRiveContainer {
+  width: 100%;
+  max-width: 60rem;
+  aspect-ratio: 16 / 10;
+}
+
+.specsRiveCanvas {
+  width: 100%;
+  height: 100%;
+}
+
+.specsStatGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.specsStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-bottom: 2.4rem;
+  border-bottom: 1px solid rgba(14, 22, 32, 0.1);
+}
+
+.specsStatLabel {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.specsStatValue {
+  font-family: var(--font-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+/* Performance panel */
+.specsPerformance {
+  display: flex;
+  gap: 6rem;
+}
+
+.specsPerformanceLeft {
+  flex: 1;
+}
+
+.specsPerformanceRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dimensions panel */
+.specsDimensions {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.specsDimensionsViews {
+  display: flex;
+  gap: 2rem;
+}
+
+.specsDimensionView {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.6rem;
+  border-radius: 10rem;
+  border: 1px solid rgba(14, 22, 32, 0.2);
+  cursor: pointer;
+  background: transparent;
+  color: var(--color-black);
+  transition: background-color 0.3s var(--ease-out-cubic),
+    color 0.3s var(--ease-out-cubic);
+}
+
+.specsDimensionView.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.specsDimensionsRive {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  aspect-ratio: 16 / 10;
+}
+
+/* Fleet panel */
+.specsFleet {
+  display: flex;
+  gap: 4rem;
+}
+
+.specsFleetLeft {
+  flex: 1;
+}
+
+.specsFleetRight {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.specsFleetStats {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.specsFleetStat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.specsFleetStatLabel {
+  font-family: var(--font-text);
+  font-size: 1.4rem;
+  font-weight: 400;
+  opacity: 0.5;
+}
+
+.specsFleetStatValue {
+  font-family: var(--font-text);
+  font-size: 3.6rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+/* Specs figures */
+.specsFigures {
+  display: flex;
+  gap: 2rem;
+  margin-top: 6rem;
+  flex-wrap: wrap;
+}
+
+.specsFigure {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.specsFigure.active {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------------------------------
+   Entry / CTA Section
+   --------------------------------------------------------------------------- */
+
+.entrySection {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.entryStickyWrapper {
+  position: relative;
+  height: 200vh;
+}
+
+.entrySticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.entryMediaWrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.entryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.entryImageDesktop {
+  display: block;
+}
+
+.entryImageMobile {
+  display: none;
+}
+
+.entryContent {
+  position: relative;
+  z-index: var(--z-above);
+  text-align: center;
+  padding: 0 var(--base-padding);
+}
+
+.entryTitle {
+  font-family: var(--font-display);
+  font-size: 6rem;
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  max-width: 80rem;
+  margin: 0 auto 4rem;
+}
+
+.entryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 2.4rem;
+  border: 1px solid rgba(245, 244, 223, 0.3);
+  border-radius: 10rem;
+  font-family: var(--font-text);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-decoration: none;
+  transition: background-color 0.3s var(--ease-out-cubic),
+    border-color 0.3s var(--ease-out-cubic);
+}
+
+.entryButton:hover {
+  background-color: rgba(245, 244, 223, 0.1);
+  border-color: rgba(245, 244, 223, 0.5);
+}
+
+.entryFeatures {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.entryFeature {
+  font-family: var(--font-text);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  opacity: 0.6;
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive — Tablet (768px - 1024px)
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .heroTitleText {
+    font-size: 8rem;
+  }
+
+  .aircraftTitle,
+  .safetyTitle,
+  .soundTitle,
+  .engineeringTitle,
+  .sustainabilityTitle,
+  .specsTitle {
+    font-size: 4.8rem;
+  }
+
+  .entryTitle {
+    font-size: 4.8rem;
+  }
+
+  .aircraftTextBlocks {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .soundPropellerWrapper {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .engineeringIntro {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .engineeringHighlightsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .specsSummary,
+  .specsPerformance,
+  .specsFleet {
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .sustainabilityBigNumber {
+    font-size: 8rem;
+  }
+
+  .sustainabilityBigNumberReduced {
+    font-size: 6rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Responsive — Mobile (up to 768px)
+   --------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .heroVideoDesktop {
+    display: none;
+  }
+
+  .heroVideoMobile {
+    display: block;
+  }
+
+  .heroTitleText {
+    font-size: 5.6rem;
+  }
+
+  .heroTagline {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .heroTextBlocks {
+    gap: 3rem;
+  }
+
+  .aircraftSection {
+    padding: 0;
+  }
+
+  .aircraftIntro {
+    padding: 10rem var(--base-padding) 6rem;
+  }
+
+  .aircraftTitle,
+  .safetyTitle,
+  .soundTitle,
+  .engineeringTitle,
+  .sustainabilityTitle,
+  .specsTitle {
+    font-size: 3.6rem;
+  }
+
+  .aircraftTextBlocks {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .aircraftModes {
+    padding: 6rem var(--base-padding) 10rem;
+  }
+
+  .aircraftModeStats {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .safetySection {
+    padding: 10rem 0;
+  }
+
+  .safetySlideContent {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem var(--base-padding);
+  }
+
+  .safetySlideTitle {
+    font-size: 2.2rem;
+    width: 100%;
+  }
+
+  .safetySlideBody {
+    font-size: 1.6rem;
+  }
+
+  .soundSection {
+    padding: 10rem 0;
+  }
+
+  .soundPropellerWrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .engineeringSection {
+    padding: 10rem 0;
+  }
+
+  .engineeringIntro {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .engineeringHighlightsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .engineeringProcessItem {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .sustainabilitySection {
+    padding: 10rem 0;
+  }
+
+  .sustainabilityBigNumber {
+    font-size: 6rem;
+  }
+
+  .sustainabilityBigNumberReduced {
+    font-size: 4.8rem;
+  }
+
+  .specsSection {
+    padding: 10rem 0;
+  }
+
+  .specsTabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .specsTabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .specsTab {
+    white-space: nowrap;
+    font-size: 1.4rem;
+  }
+
+  .specsSummary,
+  .specsPerformance,
+  .specsFleet {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .specsDimensionsViews {
+    flex-wrap: wrap;
+  }
+
+  .entrySection {
+    min-height: 80vh;
+  }
+
+  .entryImageDesktop {
+    display: none;
+  }
+
+  .entryImageMobile {
+    display: block;
+  }
+
+  .entryTitle {
+    font-size: 3.6rem;
+  }
+
+  .entryFeatures {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+  }
+
+  .aircraftIntroMediaDesktop {
+    display: none;
+  }
+
+  .aircraftIntroMediaMobile {
+    display: block;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+
+  .sustainabilityBackgroundImageDesktop {
+    display: none;
+  }
+
+  .sustainabilityBackgroundImageMobile {
+    display: block;
+  }
+}

@@ -1,0 +1,254 @@
+[
+  {
+    "viewport": "mobile",
+    "page": "index",
+    "diffPixels": 73957,
+    "diffPercent": 24.3
+  },
+  {
+    "viewport": "mobile",
+    "page": "experience",
+    "diffPixels": 254396,
+    "diffPercent": 83.5
+  },
+  {
+    "viewport": "mobile",
+    "page": "technology",
+    "diffPixels": 236790,
+    "diffPercent": 77.8
+  },
+  {
+    "viewport": "mobile",
+    "page": "company",
+    "diffPixels": 158401,
+    "diffPercent": 52
+  },
+  {
+    "viewport": "mobile",
+    "page": "careers",
+    "diffPixels": 168546,
+    "diffPercent": 55.4
+  },
+  {
+    "viewport": "mobile",
+    "page": "news",
+    "diffPixels": 136380,
+    "diffPercent": 44.8
+  },
+  {
+    "viewport": "mobile",
+    "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
+    "diffPixels": 44085,
+    "diffPercent": 14.5
+  },
+  {
+    "viewport": "mobile",
+    "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
+    "diffPixels": 38406,
+    "diffPercent": 12.6
+  },
+  {
+    "viewport": "mobile",
+    "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
+    "diffPixels": 41594,
+    "diffPercent": 13.7
+  },
+  {
+    "viewport": "mobile",
+    "page": "privacy-policy",
+    "diffPixels": 17820,
+    "diffPercent": 5.9
+  },
+  {
+    "viewport": "mobile",
+    "page": "terms-of-use",
+    "diffPixels": 18987,
+    "diffPercent": 6.2
+  },
+  {
+    "viewport": "mobile",
+    "page": "safety-policy",
+    "diffPixels": 18268,
+    "diffPercent": 6
+  },
+  {
+    "viewport": "mobile",
+    "page": "transparency",
+    "diffPixels": 19616,
+    "diffPercent": 6.4
+  },
+  {
+    "viewport": "mobile",
+    "page": "impact-reporting",
+    "diffPixels": 20669,
+    "diffPercent": 6.8
+  },
+  {
+    "viewport": "tablet",
+    "page": "index",
+    "diffPixels": 258404,
+    "diffPercent": 32.9
+  },
+  {
+    "viewport": "tablet",
+    "page": "experience",
+    "diffPixels": 696246,
+    "diffPercent": 88.5
+  },
+  {
+    "viewport": "tablet",
+    "page": "technology",
+    "diffPixels": 572330,
+    "diffPercent": 72.8
+  },
+  {
+    "viewport": "tablet",
+    "page": "company",
+    "diffPixels": 420538,
+    "diffPercent": 53.5
+  },
+  {
+    "viewport": "tablet",
+    "page": "careers",
+    "diffPixels": 319714,
+    "diffPercent": 40.7
+  },
+  {
+    "viewport": "tablet",
+    "page": "news",
+    "diffPixels": 296279,
+    "diffPercent": 37.7
+  },
+  {
+    "viewport": "tablet",
+    "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
+    "diffPixels": 69215,
+    "diffPercent": 8.8
+  },
+  {
+    "viewport": "tablet",
+    "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
+    "diffPixels": 51896,
+    "diffPercent": 6.6
+  },
+  {
+    "viewport": "tablet",
+    "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
+    "diffPixels": 54538,
+    "diffPercent": 6.9
+  },
+  {
+    "viewport": "tablet",
+    "page": "privacy-policy",
+    "diffPixels": 25644,
+    "diffPercent": 3.3
+  },
+  {
+    "viewport": "tablet",
+    "page": "terms-of-use",
+    "diffPixels": 23440,
+    "diffPercent": 3
+  },
+  {
+    "viewport": "tablet",
+    "page": "safety-policy",
+    "diffPixels": 25400,
+    "diffPercent": 3.2
+  },
+  {
+    "viewport": "tablet",
+    "page": "transparency",
+    "diffPixels": 31938,
+    "diffPercent": 4.1
+  },
+  {
+    "viewport": "tablet",
+    "page": "impact-reporting",
+    "diffPixels": 27911,
+    "diffPercent": 3.5
+  },
+  {
+    "viewport": "desktop",
+    "page": "index",
+    "diffPixels": 297563,
+    "diffPercent": 23
+  },
+  {
+    "viewport": "desktop",
+    "page": "experience",
+    "diffPixels": 1049937,
+    "diffPercent": 81
+  },
+  {
+    "viewport": "desktop",
+    "page": "technology",
+    "diffPixels": 757926,
+    "diffPercent": 58.5
+  },
+  {
+    "viewport": "desktop",
+    "page": "company",
+    "diffPixels": 669757,
+    "diffPercent": 51.7
+  },
+  {
+    "viewport": "desktop",
+    "page": "careers",
+    "diffPixels": 468884,
+    "diffPercent": 36.2
+  },
+  {
+    "viewport": "desktop",
+    "page": "news",
+    "diffPixels": 562800,
+    "diffPercent": 43.4
+  },
+  {
+    "viewport": "desktop",
+    "page": "news--joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden",
+    "diffPixels": 141261,
+    "diffPercent": 10.9
+  },
+  {
+    "viewport": "desktop",
+    "page": "news--joby-s-first-faa-conforming-aircraft-takes-flight",
+    "diffPixels": 129988,
+    "diffPercent": 10
+  },
+  {
+    "viewport": "desktop",
+    "page": "news--joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program",
+    "diffPixels": 127524,
+    "diffPercent": 9.8
+  },
+  {
+    "viewport": "desktop",
+    "page": "privacy-policy",
+    "diffPixels": 26550,
+    "diffPercent": 2
+  },
+  {
+    "viewport": "desktop",
+    "page": "terms-of-use",
+    "diffPixels": 24892,
+    "diffPercent": 1.9
+  },
+  {
+    "viewport": "desktop",
+    "page": "safety-policy",
+    "diffPixels": 27047,
+    "diffPercent": 2.1
+  },
+  {
+    "viewport": "desktop",
+    "page": "transparency",
+    "diffPixels": 36111,
+    "diffPercent": 2.8
+  },
+  {
+    "viewport": "desktop",
+    "page": "impact-reporting",
+    "diffPixels": 31426,
+    "diffPercent": 2.4
+  }
+]
