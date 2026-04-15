@@ -111,7 +111,7 @@ const ENGINEERING_PROCESS = [
     text: "We conduct equipment-level testing at speed, with the capability to support the full spectrum of development and certification testing. Our state-of-the-art labs enable rapid iteration and validation across systems.",
   },
   {
-    label: "4.2",
+    label: "4.3",
     title: "Precision and Quality",
     text: "Our manufacturing process is designed for scalability without compromising precision or quality \u2014 made possible through close collaboration with Toyota\u2019s world-renowned engineering and production systems.",
   },
@@ -324,7 +324,7 @@ export default function TechnologyPage() {
             <div className={styles.heroContent}>
               <div className={styles.heroTitle}>
                 <h1 className={styles.heroTitleText}>
-                  Making dreams<br />take flight
+                  Cruise, controlled.
                 </h1>
               </div>
 

@@ -580,13 +580,17 @@ export default function HomePage() {
             </div>
             <div ref={heroSubtitleRef} className={styles.heroSubtitle}>
               <p className={styles.heroSubtitleText}>
-                {" "}The future of aviation is coming soon.
+                The future of aviation is coming soon.
               </p>
             </div>
             <div ref={heroTextSlidesRef} className={styles.heroTextSlides}>
               <div className={styles.heroTextSlideItem}>
                 Elevate your commute with our all-electric air taxi, soon to be
                 bookable at the tap of a button.
+              </div>
+              <div className={styles.heroTextSlideItem}>
+                Zero traffic. Zero operating emissions. Just the space and time
+                your day deserves.
               </div>
             </div>
           </div>
