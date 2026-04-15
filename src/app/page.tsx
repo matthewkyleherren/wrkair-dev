@@ -145,6 +145,9 @@ export default function HomePage() {
   /* --- State: Partners active index --- */
   const [activePartner, setActivePartner] = useState(0);
 
+  /* --- State: Hero text slide index --- */
+  const [activeHeroSlide, setActiveHeroSlide] = useState(0);
+
   useEffect(() => {
     const kills: (ScrollTrigger | gsap.core.Timeline | gsap.core.Tween)[] = [];
 
@@ -178,6 +181,11 @@ export default function HomePage() {
         onUpdate: (self) => {
           if (!video || !video.duration) return;
           video.currentTime = remap(self.progress, 0.05, 1, 0, 1) * video.duration;
+
+          // Hero text slides - cycle through based on scroll progress
+          // First slide: 0-50%, Second slide: 50-100%
+          const slideIndex = self.progress < 0.5 ? 0 : 1;
+          setActiveHeroSlide(slideIndex);
         },
       });
       kills.push(innerSt, innerTl);
@@ -199,7 +207,8 @@ export default function HomePage() {
 
       if (!isMobile) {
         const numSlides = 3;
-        const a = 0.9 / numSlides; // per-slide allocation
+        // Adjusted timing: each slide gets more room for smooth transitions
+        const slideAllocation = 0.85 / numSlides;
 
         // Set initial state: first slide fully in
         if (slideRefs.current[0]) {
@@ -210,26 +219,42 @@ export default function HomePage() {
           trigger: expWrapper,
           start: "top top",
           end: "bottom bottom",
-          scrub: true,
+          scrub: 0.5, // Smoother scrub
           onUpdate: (self) => {
             const progress = self.progress;
 
             slideRefs.current.forEach((slide, d) => {
               if (!slide) return;
 
-              const slideStart = d * a;
-              // First slide starts fully "in" — map from 0 so it's already at 1
-              const slideProgressIn = d === 0 ? 1 : remap(progress, slideStart, slideStart + a, 0, 1);
-              const slideProgressOut = d < numSlides - 1 ? remap(progress, slideStart + a * 0.8, slideStart + a * 1.8, 0, 1) : 0;
-              const slideProgressEnd = d < numSlides - 2 ? remap(progress, slideStart + a * 1.8, slideStart + a * 2.8, 0, 1) : 0;
+              const slideStart = d * slideAllocation;
+              const slideEnd = slideStart + slideAllocation;
+              
+              // First slide starts fully "in", others animate in
+              let slideProgressIn: number;
+              if (d === 0) {
+                slideProgressIn = 1;
+              } else {
+                // Slides animate in over the first 40% of their allocation
+                slideProgressIn = remap(progress, slideStart, slideStart + slideAllocation * 0.4, 0, 1);
+              }
+              
+              // Slide animates out starting at 70% of its allocation, completing when next slide is 40% in
+              const slideProgressOut = d < numSlides - 1 
+                ? remap(progress, slideStart + slideAllocation * 0.7, slideEnd + slideAllocation * 0.4, 0, 1) 
+                : 0;
+              
+              // Slide fully exits (for z-index purposes) - extends beyond current slide's allocation
+              const slideProgressEnd = d < numSlides - 2 
+                ? remap(progress, slideEnd + slideAllocation * 0.4, slideEnd + slideAllocation * 1.4, 0, 1) 
+                : 0;
 
-              // For last slide, add a "last child out" progress
+              // For last slide, add a "last child out" progress for exit animation
               const lastChildOut = d === numSlides - 1 ? remap(progress, 0.9, 1, 0, 1) : 0;
 
-              slide.style.setProperty("--slide-progress-in", String(slideProgressIn));
-              slide.style.setProperty("--slide-progress-out", String(slideProgressOut));
-              slide.style.setProperty("--slide-progress-end", String(slideProgressEnd));
-              slide.style.setProperty("--slide-progress-last-child-out", String(lastChildOut));
+              slide.style.setProperty("--slide-progress-in", String(Math.max(0, Math.min(1, slideProgressIn))));
+              slide.style.setProperty("--slide-progress-out", String(Math.max(0, Math.min(1, slideProgressOut))));
+              slide.style.setProperty("--slide-progress-end", String(Math.max(0, Math.min(1, slideProgressEnd))));
+              slide.style.setProperty("--slide-progress-last-child-out", String(Math.max(0, Math.min(1, lastChildOut))));
 
               // Visibility: hide slides that have fully exited
               if (slideProgressEnd >= 1) {
@@ -303,39 +328,43 @@ export default function HomePage() {
       techEntryTl.set({}, {}, 1);
 
       // Border radius: round corners flatten as section scrolls in
-      techEntryTl.fromTo(techSectionRef.current, { "--border-radius-progress": 0 }, { "--border-radius-progress": 1, ease: "power1.in", duration: 0.5 }, 0);
+      techEntryTl.fromTo(techSectionRef.current, { "--border-radius-progress": 0 }, { "--border-radius-progress": 1, ease: "power2.out", duration: 0.6 }, 0);
 
       // Media translate in from below
       if (techMediaRef.current) {
-        techEntryTl.fromTo(techMediaRef.current, { "--translate-y-in-progress": 0 }, { "--translate-y-in-progress": 1, ease: "none", duration: 1 }, 0);
+        techEntryTl.fromTo(techMediaRef.current, { "--translate-y-in-progress": 0 }, { "--translate-y-in-progress": 1, ease: "power1.out", duration: 1 }, 0);
       }
 
-      // Content fade in
+      // Content fade in - starts earlier and has transform
       if (techContentRef.current) {
-        techEntryTl.fromTo(techContentRef.current, { opacity: 0 }, { opacity: 1, ease: "power1.out", duration: 0.4 }, 0.4);
+        techEntryTl.fromTo(techContentRef.current, 
+          { opacity: 0, y: "2rem" }, 
+          { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.5 }, 
+          0.35
+        );
       }
 
       const techEntrySt = ScrollTrigger.create({
         trigger: techSectionRef.current,
         start: "top bottom",
         end: "top top",
-        scrub: true,
+        scrub: 0.5, // Smoother scrub
         animation: techEntryTl,
       });
       kills.push(techEntrySt, techEntryTl);
 
-      // Full progress: media translates out
+      // Full progress: media translates out with slight scale
       const techFullTl = gsap.timeline();
       if (techMediaRef.current) {
         techFullTl.fromTo(techMediaRef.current, { "--translate-y-out-progress": 0 }, { "--translate-y-out-progress": 1, ease: "none", duration: 1 }, 0);
       }
-      techFullTl.fromTo(techSectionRef.current, { "--border-radius-out": 0 }, { "--border-radius-out": 1, ease: "none", duration: 1 }, 0);
+      techFullTl.fromTo(techSectionRef.current, { "--border-radius-out": 0 }, { "--border-radius-out": 1, ease: "power1.in", duration: 1 }, 0);
 
       const techFullSt = ScrollTrigger.create({
         trigger: techSectionRef.current,
         start: "top top",
         end: "bottom top",
-        scrub: true,
+        scrub: 0.3,
         animation: techFullTl,
       });
       kills.push(techFullSt, techFullTl);
@@ -362,13 +391,13 @@ export default function HomePage() {
               if (title) gsap.fromTo(title, { y: "2rem", opacity: 0 }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7 });
             }
 
-            // Staggered card animations
+            // Staggered card animations - tighter stagger for more cohesive feel
             newsItemRefs.current.forEach((item, i) => {
               if (!item) return;
-              const stagger = 0.15 * i;
+              const stagger = 0.12 * i; // Slightly tighter stagger
               gsap.fromTo(item,
-                { y: "20%", opacity: 0 },
-                { y: "0%", opacity: 1, ease: "power2.out", duration: 0.8, delay: stagger }
+                { y: "2.5rem", opacity: 0 },
+                { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7, delay: stagger }
               );
             });
           },
@@ -401,29 +430,33 @@ export default function HomePage() {
         trigger: partnersStickyWrapperRef.current,
         start: "top top",
         end: "bottom bottom",
-        scrub: true,
+        scrub: 0.3, // Smoother scrub for better category switching feel
         onUpdate: (self) => {
-          const idx = Math.round(self.progress * Math.max(0, numCats - 1));
+          // Use floor with slight bias to make transitions feel more deliberate
+          // Each category gets equal scroll distance
+          const rawIndex = self.progress * (numCats - 1);
+          const idx = Math.round(rawIndex);
           setActivePartner(idx);
 
-          // Set --active-slide CSS variable on the wrapper
+          // Set CSS variables for potential CSS-driven animations
           if (partnersWrapperRef.current) {
             partnersWrapperRef.current.style.setProperty("--active-slide", String(idx));
+            partnersWrapperRef.current.style.setProperty("--scroll-progress", String(self.progress));
           }
         },
       });
       kills.push(partnersSt);
 
-      // Images scale entrance
+      // Images scale entrance - starts at 0.3 scale and grows to 1
       if (partnersImagesWrapperRef.current) {
         const imgTl = gsap.timeline();
-        imgTl.fromTo(partnersImagesWrapperRef.current, { "--progress": 0 }, { "--progress": 1, ease: "power1.out", duration: 1 });
+        imgTl.fromTo(partnersImagesWrapperRef.current, { "--progress": 0 }, { "--progress": 1, ease: "power2.out", duration: 1 });
 
         const imgSt = ScrollTrigger.create({
           trigger: partnersImagesWrapperRef.current,
           start: "top bottom",
-          end: "top 30%",
-          scrub: true,
+          end: "top 20%", // Slightly longer entrance for smoother scale-up
+          scrub: 0.5,
           animation: imgTl,
         });
         kills.push(imgSt, imgTl);
@@ -437,21 +470,25 @@ export default function HomePage() {
       const storyEntryTl = gsap.timeline();
       storyEntryTl.set({}, {}, 1);
 
-      storyEntryTl.fromTo(storySectionRef.current, { "--border-radius-progress": 0 }, { "--border-radius-progress": 1, ease: "power1.in", duration: 0.5 }, 0);
+      storyEntryTl.fromTo(storySectionRef.current, { "--border-radius-progress": 0 }, { "--border-radius-progress": 1, ease: "power2.out", duration: 0.6 }, 0);
 
       if (storyMediaRef.current) {
-        storyEntryTl.fromTo(storyMediaRef.current, { "--translate-y-in-progress": 0 }, { "--translate-y-in-progress": 1, ease: "none", duration: 1 }, 0);
+        storyEntryTl.fromTo(storyMediaRef.current, { "--translate-y-in-progress": 0 }, { "--translate-y-in-progress": 1, ease: "power1.out", duration: 1 }, 0);
       }
 
       if (storyContentRef.current) {
-        storyEntryTl.fromTo(storyContentRef.current, { opacity: 0 }, { opacity: 1, ease: "power1.out", duration: 0.4 }, 0.4);
+        storyEntryTl.fromTo(storyContentRef.current, 
+          { opacity: 0, y: "2rem" }, 
+          { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.5 }, 
+          0.35
+        );
       }
 
       const storyEntrySt = ScrollTrigger.create({
         trigger: storySectionRef.current,
         start: "top bottom",
         end: "top top",
-        scrub: true,
+        scrub: 0.5,
         animation: storyEntryTl,
       });
       kills.push(storyEntrySt, storyEntryTl);
@@ -460,13 +497,13 @@ export default function HomePage() {
       if (storyMediaRef.current) {
         storyFullTl.fromTo(storyMediaRef.current, { "--translate-y-out-progress": 0 }, { "--translate-y-out-progress": 1, ease: "none", duration: 1 }, 0);
       }
-      storyFullTl.fromTo(storySectionRef.current, { "--border-radius-out": 0 }, { "--border-radius-out": 1, ease: "none", duration: 1 }, 0);
+      storyFullTl.fromTo(storySectionRef.current, { "--border-radius-out": 0 }, { "--border-radius-out": 1, ease: "power1.in", duration: 1 }, 0);
 
       const storyFullSt = ScrollTrigger.create({
         trigger: storySectionRef.current,
         start: "top top",
         end: "bottom top",
-        scrub: true,
+        scrub: 0.3,
         animation: storyFullTl,
       });
       kills.push(storyFullSt, storyFullTl);
@@ -476,22 +513,23 @@ export default function HomePage() {
        ILLUSTRATION — Parallax layers + text reveals + border radius
        =================================================================== */
     if (illustrationContentWrapperRef.current) {
-      // Border radius reveal
+      // Border radius reveal - starts rounding and flattens as section enters
       const illBrTl = gsap.timeline();
-      illBrTl.fromTo(illustrationContentWrapperRef.current, { "--border-radius-progress": 0 }, { "--border-radius-progress": 1, ease: "power2.in", duration: 0.5 });
+      illBrTl.fromTo(illustrationContentWrapperRef.current, { "--border-radius-progress": 0 }, { "--border-radius-progress": 1, ease: "power2.out", duration: 1 });
 
       const illBrSt = ScrollTrigger.create({
         trigger: illustrationContentWrapperRef.current,
         start: "top bottom",
-        end: "top top",
-        scrub: true,
+        end: "top 20%", // Border radius completes before section is fully in view
+        scrub: 0.5,
         animation: illBrTl,
       });
       kills.push(illBrSt, illBrTl);
 
-      // Per-layer parallax
+      // Per-layer parallax - each layer moves at different speeds for depth effect
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
-      const baseAmount = (isMobile ? 0.1 : 0.15) * window.innerHeight;
+      // Increased base amount for more noticeable parallax
+      const baseAmount = (isMobile ? 0.12 : 0.18) * window.innerHeight;
 
       illustrationLayerRefs.current.forEach((layer, i) => {
         if (!layer || LAYER_SPEEDS[i] === 0) return;
@@ -499,27 +537,30 @@ export default function HomePage() {
 
         const tween = gsap.fromTo(layer, { y: -range }, { y: range, ease: "none" });
         const st = ScrollTrigger.create({
-          trigger: layer,
+          trigger: illustrationContentWrapperRef.current, // Use wrapper as trigger for consistent parallax
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
+          scrub: 0.3, // Smooth scrub for parallax
           animation: tween,
           invalidateOnRefresh: true,
         });
         kills.push(st, tween);
       });
 
-      // Content text block reveals
+      // Content text block reveals - staggered entrance animations
       illustrationContentRefs.current.forEach((block, i) => {
         if (!block) return;
         let fired = false;
         const st = ScrollTrigger.create({
           trigger: block,
-          start: "top 75%",
+          start: "top 80%", // Trigger slightly earlier
           onEnter: () => {
             if (fired) return;
             fired = true;
-            gsap.fromTo(block, { y: "2rem", opacity: 0 }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7, delay: i * 0.1 });
+            gsap.fromTo(block, 
+              { y: "2.5rem", opacity: 0 }, 
+              { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.8, delay: i * 0.08 }
+            );
           },
         });
         kills.push(st);
@@ -584,11 +625,11 @@ export default function HomePage() {
               </p>
             </div>
             <div ref={heroTextSlidesRef} className={styles.heroTextSlides}>
-              <div className={styles.heroTextSlideItem}>
+              <div className={`${styles.heroTextSlideItem} ${activeHeroSlide === 0 ? styles.heroTextSlideItemActive : ""}`}>
                 Elevate your commute with our all-electric air taxi, soon to be
                 bookable at the tap of a button.
               </div>
-              <div className={styles.heroTextSlideItem}>
+              <div className={`${styles.heroTextSlideItem} ${activeHeroSlide === 1 ? styles.heroTextSlideItemActive : ""}`}>
                 Zero traffic. Zero operating emissions. Just the space and time
                 your day deserves.
               </div>
