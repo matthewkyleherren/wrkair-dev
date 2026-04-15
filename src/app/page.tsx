@@ -4,6 +4,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Button from "@/components/Button";
 import styles from "./page.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -171,8 +172,15 @@ export default function HomePage() {
       innerTl.set({}, {}, 1);
 
       if (heroMediaRef.current) innerTl.to(heroMediaRef.current, { "--translate-y-progress": 1, "--border-radius-in": 1, ease: "power1.inOut", duration: r }, 0);
-      if (heroTitleRef.current) innerTl.to(heroTitleRef.current, { "--animate-in": 1, ease: "power1.inOut", duration: r }, 0);
-      if (heroSubtitleRef.current) innerTl.to(heroSubtitleRef.current, { "--animate-in": 1, ease: "power1.inOut", duration: r }, 0);
+      if (heroTitleRef.current) {
+        innerTl.to(heroTitleRef.current, { "--animate-in": 1, ease: "power1.inOut", duration: r }, 0);
+        // Scroll-driven offset: move title up and left as user scrolls
+        if (!isMobile) innerTl.fromTo(heroTitleRef.current, { "--scroll-x": 0, "--scroll-y": 0 }, { "--scroll-x": -196, "--scroll-y": -76, ease: "power1.out", duration: 0.8 }, r);
+      }
+      if (heroSubtitleRef.current) {
+        innerTl.to(heroSubtitleRef.current, { "--animate-in": 1, ease: "power1.inOut", duration: r }, 0);
+        if (!isMobile) innerTl.fromTo(heroSubtitleRef.current, { "--scroll-x": 0, "--scroll-y": 0 }, { "--scroll-x": -196, "--scroll-y": -40, ease: "power1.out", duration: 0.8 }, r);
+      }
       if (heroTextSlidesRef.current) innerTl.fromTo(heroTextSlidesRef.current, { opacity: 0, y: "-2rem" }, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.2 * r }, 0.75 * r);
 
       const innerSt = ScrollTrigger.create({
@@ -727,9 +735,7 @@ export default function HomePage() {
               anything is possible.{" "}
             </div>
             <Link ref={expEndButtonRef} className={styles.experienceEndButton} href="/experience">
-              <button className={`${styles.button} ${styles.buttonFilled}`}>
-                Discover the Experience
-              </button>
+              <Button variant="filled">Discover the Experience</Button>
             </Link>
           </div>
         </div>
@@ -826,9 +832,7 @@ export default function HomePage() {
                 </h3>
                 <div className={styles.entryButtons}>
                   <Link href="/technology">
-                    <button className={`${styles.button} ${styles.buttonFilledTransparent}`}>
-                      Explore
-                    </button>
+                    <Button variant="filledTransparent">Explore</Button>
                   </Link>
                 </div>
               </div>
@@ -851,9 +855,7 @@ export default function HomePage() {
 
           <div className={styles.newsButtonContainer}>
             <Link href="/news">
-              <button className={`${styles.button} ${styles.buttonOutlined}`}>
-                View all News
-              </button>
+              <Button variant="outlined">View all News</Button>
             </Link>
           </div>
 
@@ -1027,14 +1029,10 @@ export default function HomePage() {
                 </h3>
                 <div className={styles.entryButtons}>
                   <Link href="/company">
-                    <button className={`${styles.button} ${styles.buttonFilledTransparent}`}>
-                      Discover our Story
-                    </button>
+                    <Button variant="filledTransparent">Discover our Story</Button>
                   </Link>
                   <Link href="/careers">
-                    <button className={`${styles.button} ${styles.buttonOutlinedTransparent}`}>
-                      Work at Joby
-                    </button>
+                    <Button variant="outlinedTransparent">Work at Joby</Button>
                   </Link>
                 </div>
               </div>

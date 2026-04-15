@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Button — Two-layer animated button (matches original site)
+   ========================================================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12rem;
+  padding: 1.45rem 2.6rem;
+  font-family: var(--font-text);
+  font-variation-settings: "wght" 550;
+  letter-spacing: -0.028rem;
+  font-size: 1.4rem;
+  font-weight: 550;
+  line-height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  background: none;
+}
+
+@media (max-width: 768px) {
+  .button {
+    letter-spacing: -0.01rem;
+    font-size: 1.2rem;
+    padding: 1rem 1.2rem;
+  }
+}
+
+/* --- Variant: filled (dark bg, white text) --- */
+.filled {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* --- Variant: outlined (transparent bg, dark border) --- */
+.outlined {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+}
+
+/* --- Variant: filledTransparent (frosted glass) --- */
+.filledTransparent {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* --- Variant: outlinedTransparent (transparent with light border) --- */
+.outlinedTransparent {
+  background-color: transparent;
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ---------------------------------------------------------------------------
+   Two-layer animation: buttonIn / buttonOut
+   On hover, buttonIn slides up+fades, buttonOut slides up from below
+   --------------------------------------------------------------------------- */
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  position: relative;
+  transition:
+    transform 0.3s var(--ease-out-curve-cubic),
+    opacity 0.3s var(--ease-out-cubic);
+}
+
+.outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 0s var(--ease-out-cubic) 0.3s;
+}
+
+.button:hover .inner {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.button:hover .outer {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    transform 0.3s var(--ease-out-curve-cubic),
+    opacity 0.3s var(--ease-out-cubic),
+    visibility 0s var(--ease-out-cubic);
+  transform: translateY(-110%);
+}

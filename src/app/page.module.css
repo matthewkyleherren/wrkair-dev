@@ -112,23 +112,30 @@
 
 .heroTitle {
   --animate-in: 0;
+  --scroll-x: 0;
+  --scroll-y: 0;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%) translateY(calc((1 - var(--animate-in)) * 4rem));
-  width: 100%;
+  right: var(--base-padding);
+  bottom: 14.6rem;
+  transform:
+    translateX(calc(var(--scroll-x) * 1px))
+    translateY(calc((1 - var(--animate-in)) * 4rem + var(--scroll-y) * 1px));
+  width: fit-content;
   max-width: 56.2rem;
-  text-align: center;
-  padding: 0 var(--base-padding);
+  text-align: left;
   color: var(--color-white);
   z-index: 4;
-  bottom: 14.6rem;
   opacity: var(--animate-in);
 }
 
 @media (max-width: 768px) {
   .heroTitle {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc((1 - var(--animate-in)) * 4rem));
     width: 28.4rem;
     bottom: 12rem;
+    text-align: center;
   }
 }
 
@@ -154,18 +161,21 @@
 
 .heroSubtitle {
   --animate-in: 0;
+  --scroll-x: 0;
+  --scroll-y: 0;
   position: absolute;
   bottom: 4rem;
-  left: 50%;
-  transform: translateX(-50%) translateY(calc((1 - var(--animate-in)) * 2rem));
-  width: 100%;
+  right: var(--base-padding);
+  transform:
+    translateX(calc(var(--scroll-x) * 1px))
+    translateY(calc((1 - var(--animate-in)) * 2rem + var(--scroll-y) * 1px));
+  width: fit-content;
   max-width: 32rem;
-  text-align: center;
+  text-align: left;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 1.2rem;
-  padding: 0 var(--base-padding);
   color: var(--color-white);
   z-index: 4;
   opacity: var(--animate-in);
@@ -173,8 +183,13 @@
 
 @media (max-width: 768px) {
   .heroSubtitle {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(calc((1 - var(--animate-in)) * 2rem));
     width: 26.4rem;
     bottom: 3.2rem;
+    text-align: center;
+    justify-content: center;
   }
 }
 
@@ -626,9 +641,17 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  inset: 0;
 }
 
-.appMediaInner img {
+.appDesktopImage,
+.appMobileImage {
+  width: 100%;
+  height: 100%;
+}
+
+.appDesktopImage img,
+.appMobileImage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1616,64 +1639,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* ==========================================================================
-   Shared: Button Styles
-   ========================================================================== */
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12rem;
-  padding: 1.45rem 2.6rem;
-  font-family: var(--font-text);
-  font-variation-settings: "wght" 550;
-  letter-spacing: -0.028rem;
-  font-size: 1.4rem;
-  font-weight: 550;
-  line-height: 100%;
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.3s var(--ease-power4-out), background-color 0.3s var(--ease-power4-out);
-  position: relative;
-  overflow: hidden;
-}
-
-@media (max-width: 768px) {
-  .button {
-    letter-spacing: -0.01rem;
-    font-size: 1.2rem;
-    padding: 1rem 1.2rem;
-  }
-}
-
-.button:hover {
-  transform: scale(1.04);
-}
-
-.buttonFilled {
-  background-color: var(--color-black);
-  color: var(--color-white);
-}
-
-.buttonOutlined {
-  background-color: transparent;
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
-}
-
-.buttonFilledTransparent {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: var(--color-white);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.buttonOutlinedTransparent {
-  background-color: transparent;
-  color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 /* ==========================================================================
