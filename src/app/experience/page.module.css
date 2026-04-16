@@ -164,7 +164,7 @@
 
 .scrollyHeader {
   position: relative;
-  min-height: 600vh;
+  min-height: 111vh;
 }
 
 .scrollyHeaderSticky {
@@ -698,8 +698,7 @@
 
 .partnersStickyWrapper {
   position: relative;
-  /* 60 * 6 categories = 360vh */
-  height: 360vh;
+  height: 394vh;
 }
 
 .partnersSticky {
@@ -880,7 +879,7 @@
   --border-radius-out: 0;
   position: relative;
   width: 100%;
-  height: 200vh;
+  height: 121vh;
   background-color: var(--color-black);
   color: var(--color-white);
   border-radius: calc(16rem * var(--border-radius-progress) * (1 - var(--border-radius-out)));
@@ -1242,7 +1241,7 @@
   }
 
   .entrySection {
-    height: 200lvh;
+    height: 121lvh;
     border-radius: calc(8rem * var(--border-radius-progress) * (1 - var(--border-radius-out)));
   }
 
