@@ -555,6 +555,8 @@ export default function TechnologyPage() {
           Sound Section
           ================================================================ */}
       <section className={styles.soundSection}>
+        <div className={styles.soundStickyWrapper}>
+          <div className={styles.soundSticky}>
         <div className={styles.soundWrapper}>
           <div className={styles.soundNumberedTitle}>
             <span className={styles.soundNumberedNumber}>3</span>
@@ -610,6 +612,8 @@ export default function TechnologyPage() {
               World-class facility
             </span>
             <span className={styles.soundBottomLocation}>Marina, CA</span>
+          </div>
+        </div>
           </div>
         </div>
       </section>
@@ -712,6 +716,8 @@ export default function TechnologyPage() {
           Sustainability Section
           ================================================================ */}
       <section className={styles.sustainabilitySection}>
+        <div className={styles.sustainabilityStickyWrapper}>
+          <div className={styles.sustainabilitySticky}>
         <div className={styles.sustainabilityWrapper}>
           <div className={styles.sustainabilityNumberedTitle}>
             <span className={styles.sustainabilityNumberedNumber}>5</span>
@@ -795,12 +801,16 @@ export default function TechnologyPage() {
             Joby Impact Report 2024
           </a>
         </div>
+          </div>
+        </div>
       </section>
 
       {/* ================================================================
           Specs Section
           ================================================================ */}
       <section className={styles.specsSection}>
+        <div className={styles.specsStickyWrapper}>
+          <div className={styles.specsSticky}>
         <div className={styles.specsWrapper}>
           <div className={styles.specsNumberedTitle}>
             <span className={styles.specsNumberedNumber}>6</span>
@@ -956,6 +966,8 @@ export default function TechnologyPage() {
                 {fig}
               </span>
             ))}
+          </div>
+        </div>
           </div>
         </div>
       </section>
