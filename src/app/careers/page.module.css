@@ -343,7 +343,7 @@
 
 .dreamerSection {
   position: relative;
-  min-height: 100vh;
+  min-height: 121vh;
 }
 
 .dreamerMedia {
@@ -374,14 +374,14 @@
   position: sticky;
   top: 3.2rem;
   z-index: 1;
-  min-height: 100vh;
+  min-height: 121vh;
 }
 
 .dreamerInner {
   padding: 0 var(--base-padding);
   display: flex;
   align-items: flex-end;
-  min-height: 100vh;
+  min-height: 121vh;
   padding-bottom: 6rem;
 }
 
@@ -511,7 +511,7 @@
 
 .pageEntry {
   position: relative;
-  min-height: 100vh;
+  min-height: 121vh;
 }
 
 .pageEntryMedia {
@@ -549,7 +549,7 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--gutter-width);
-  min-height: 100vh;
+  min-height: 121vh;
   align-content: center;
 }
 

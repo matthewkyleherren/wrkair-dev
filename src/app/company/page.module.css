@@ -782,7 +782,7 @@
   --border-radius-progress: 0;
   --border-radius-out: 0;
   position: relative;
-  min-height: 100vh;
+  min-height: 121vh;
   border-radius:
     calc(16rem * (1 - var(--border-radius-progress)))
     calc(16rem * (1 - var(--border-radius-progress)))
@@ -843,7 +843,7 @@
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
   gap: var(--gutter-width);
-  min-height: 100vh;
+  min-height: 121vh;
   align-content: center;
 }
 
