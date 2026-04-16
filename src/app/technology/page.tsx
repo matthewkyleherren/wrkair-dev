@@ -373,69 +373,73 @@ export default function TechnologyPage() {
           ================================================================ */}
       <section className={styles.aircraftSection}>
         <div className={styles.aircraftScroller}>
-          {/* --- Intro --- */}
-          <div className={styles.aircraftIntro}>
-            <div className={styles.aircraftIntroFixed}>
-              {/* Aircraft image */}
-              <div className={styles.aircraftIntroMediaDesktop}>
-                <img
-                  src={`${SANITY_CDN}/efdaf237ec499c9731dd89205127792fbb20bf8f-2122x1194.png`}
-                  alt="Safely soaring skyward"
-                  className={styles.aircraftIntroCanvas}
-                  loading="lazy"
-                />
-              </div>
-              <div className={styles.aircraftIntroMediaMobile}>
-                <img
-                  src={`${SANITY_CDN}/efdaf237ec499c9731dd89205127792fbb20bf8f-2122x1194.png`}
-                  alt="Safely soaring skyward"
-                  className={styles.aircraftIntroCanvas}
-                  loading="lazy"
-                />
-              </div>
-            </div>
+          {/* --- Intro (sticky scroll wrapper) --- */}
+          <div className={styles.aircraftIntroStickyWrapper}>
+            <div className={styles.aircraftIntroSticky}>
+              <div className={styles.aircraftIntro}>
+                <div className={styles.aircraftIntroFixed}>
+                  {/* Aircraft image */}
+                  <div className={styles.aircraftIntroMediaDesktop}>
+                    <img
+                      src={`${SANITY_CDN}/efdaf237ec499c9731dd89205127792fbb20bf8f-2122x1194.png`}
+                      alt="Safely soaring skyward"
+                      className={styles.aircraftIntroCanvas}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className={styles.aircraftIntroMediaMobile}>
+                    <img
+                      src={`${SANITY_CDN}/efdaf237ec499c9731dd89205127792fbb20bf8f-2122x1194.png`}
+                      alt="Safely soaring skyward"
+                      className={styles.aircraftIntroCanvas}
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
 
-            <div className={styles.aircraftNumberedTitle}>
-              <span className={styles.aircraftNumberedNumber}>1</span>
-              <h2 className={styles.aircraftTitle}>Joby Aircraft</h2>
-            </div>
+                <div className={styles.aircraftNumberedTitle}>
+                  <span className={styles.aircraftNumberedNumber}>1</span>
+                  <h2 className={styles.aircraftTitle}>Joby Aircraft</h2>
+                </div>
 
-            <div className={styles.aircraftTextBlocks}>
-              <div className={styles.aircraftTextBlock}>
-                <h3 className={styles.aircraftTextBlockTitle}>
-                  Fast, Flexible Travel
-                </h3>
-                <p className={styles.aircraftTextBlockText}>
-                  Taking off and landing vertically allows us to get you closer
-                  to your destination than ever before.
-                </p>
-              </div>
-              <div className={styles.aircraftTextBlock}>
-                <h3 className={styles.aircraftTextBlockTitle}>
-                  Quiet by design
-                </h3>
-                <p className={styles.aircraftTextBlockText}>
-                  We designed our acoustic footprint to make our aircraft as
-                  quiet as the wind in the trees for city-friendly travel.
-                </p>
-              </div>
-              <div className={styles.aircraftTextBlock}>
-                <h3 className={styles.aircraftTextBlockTitle}>
-                  Zero operating emissions
-                </h3>
-                <p className={styles.aircraftTextBlockText}>
-                  All-electric and energy-efficient, making clean, everyday
-                  flight a reality.
-                </p>
-              </div>
-              <div className={styles.aircraftTextBlock}>
-                <h3 className={styles.aircraftTextBlockTitle}>
-                  Six electric motors
-                </h3>
-                <p className={styles.aircraftTextBlockText}>
-                  Six propellers, four battery packs and a triple-redundant
-                  flight computer to enhance safety in the skies.
-                </p>
+                <div className={styles.aircraftTextBlocks}>
+                  <div className={styles.aircraftTextBlock}>
+                    <h3 className={styles.aircraftTextBlockTitle}>
+                      Fast, Flexible Travel
+                    </h3>
+                    <p className={styles.aircraftTextBlockText}>
+                      Taking off and landing vertically allows us to get you closer
+                      to your destination than ever before.
+                    </p>
+                  </div>
+                  <div className={styles.aircraftTextBlock}>
+                    <h3 className={styles.aircraftTextBlockTitle}>
+                      Quiet by design
+                    </h3>
+                    <p className={styles.aircraftTextBlockText}>
+                      We designed our acoustic footprint to make our aircraft as
+                      quiet as the wind in the trees for city-friendly travel.
+                    </p>
+                  </div>
+                  <div className={styles.aircraftTextBlock}>
+                    <h3 className={styles.aircraftTextBlockTitle}>
+                      Zero operating emissions
+                    </h3>
+                    <p className={styles.aircraftTextBlockText}>
+                      All-electric and energy-efficient, making clean, everyday
+                      flight a reality.
+                    </p>
+                  </div>
+                  <div className={styles.aircraftTextBlock}>
+                    <h3 className={styles.aircraftTextBlockTitle}>
+                      Six electric motors
+                    </h3>
+                    <p className={styles.aircraftTextBlockText}>
+                      Six propellers, four battery packs and a triple-redundant
+                      flight computer to enhance safety in the skies.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -488,57 +492,61 @@ export default function TechnologyPage() {
           Safety Slider Section
           ================================================================ */}
       <section className={styles.safetySection}>
-        <div className={styles.safetyHeader}>
-          <div className={styles.safetyNumberedTitle}>
-            <span className={styles.safetyNumberedNumber}>2</span>
-            <h2 className={styles.safetyTitle}>Safely soaring skyward</h2>
-          </div>
-          <p className={styles.safetyLabel}>Safety</p>
-        </div>
+        <div className={styles.safetyStickyWrapper}>
+          <div className={styles.safetySticky}>
+            <div className={styles.safetyHeader}>
+              <div className={styles.safetyNumberedTitle}>
+                <span className={styles.safetyNumberedNumber}>2</span>
+                <h2 className={styles.safetyTitle}>Safely soaring skyward</h2>
+              </div>
+              <p className={styles.safetyLabel}>Safety</p>
+            </div>
 
-        <div className={styles.safetySlidesContainer}>
-          {/* Image Slider */}
-          <div className={styles.safetyImageSlider}>
-            <div className={styles.safetyImageSliderMask}>
-              <div
-                className={styles.safetyImageSliderInner}
-                ref={safetySliderRef}
-              >
-                {SAFETY_SLIDES.map((slide, i) => (
-                  <div key={i} className={styles.safetyImageSliderScale}>
-                    <img
-                      className={styles.safetySlideImage}
-                      src={slide.src}
-                      alt={slide.alt}
-                      loading={i === 0 ? "eager" : "lazy"}
-                    />
-                    <span className={styles.safetySlideTag}>{slide.tag}</span>
+            <div className={styles.safetySlidesContainer}>
+              {/* Image Slider */}
+              <div className={styles.safetyImageSlider}>
+                <div className={styles.safetyImageSliderMask}>
+                  <div
+                    className={styles.safetyImageSliderInner}
+                    ref={safetySliderRef}
+                  >
+                    {SAFETY_SLIDES.map((slide, i) => (
+                      <div key={i} className={styles.safetyImageSliderScale}>
+                        <img
+                          className={styles.safetySlideImage}
+                          src={slide.src}
+                          alt={slide.alt}
+                          loading={i === 0 ? "eager" : "lazy"}
+                        />
+                        <span className={styles.safetySlideTag}>{slide.tag}</span>
+                      </div>
+                    ))}
                   </div>
+                </div>
+              </div>
+
+              {/* Text content */}
+              <div className={styles.safetySlideContent}>
+                <h3 className={styles.safetySlideTitle}>
+                  {SAFETY_SLIDES[activeSafetySlide].title}
+                </h3>
+                <p className={styles.safetySlideBody}>
+                  {SAFETY_SLIDES[activeSafetySlide].body}
+                </p>
+              </div>
+
+              {/* Pagination */}
+              <div className={styles.safetyPagination}>
+                {SAFETY_SLIDES.map((_, i) => (
+                  <button
+                    key={i}
+                    className={`${styles.safetyPaginationItem} ${i === activeSafetySlide ? styles.active : ""}`}
+                    onClick={() => goToSafetySlide(i)}
+                    aria-label={`Go to safety slide ${i + 1}`}
+                  />
                 ))}
               </div>
             </div>
-          </div>
-
-          {/* Text content */}
-          <div className={styles.safetySlideContent}>
-            <h3 className={styles.safetySlideTitle}>
-              {SAFETY_SLIDES[activeSafetySlide].title}
-            </h3>
-            <p className={styles.safetySlideBody}>
-              {SAFETY_SLIDES[activeSafetySlide].body}
-            </p>
-          </div>
-
-          {/* Pagination */}
-          <div className={styles.safetyPagination}>
-            {SAFETY_SLIDES.map((_, i) => (
-              <button
-                key={i}
-                className={`${styles.safetyPaginationItem} ${i === activeSafetySlide ? styles.active : ""}`}
-                onClick={() => goToSafetySlide(i)}
-                aria-label={`Go to safety slide ${i + 1}`}
-              />
-            ))}
           </div>
         </div>
       </section>
