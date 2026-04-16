@@ -36,26 +36,23 @@
   color: var(--color-white);
 }
 
-/* --- Variant: outlined (transparent bg, dark border) --- */
+/* --- Variant: outlined (dark bg, light text — same visual as filled on dark sections) --- */
 .outlined {
-  background-color: transparent;
-  color: var(--color-black);
-  border: 1px solid var(--color-black);
-}
-
-/* --- Variant: filledTransparent (frosted glass) --- */
-.filledTransparent {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--color-black);
   color: var(--color-white);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
-/* --- Variant: outlinedTransparent (transparent with light border) --- */
+/* --- Variant: filledTransparent (solid cream bg, dark text) --- */
+.filledTransparent {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* --- Variant: outlinedTransparent (transparent with cream border) --- */
 .outlinedTransparent {
   background-color: transparent;
   color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid var(--color-white);
 }
 
 /* ---------------------------------------------------------------------------

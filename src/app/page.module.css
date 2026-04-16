@@ -111,7 +111,6 @@
 }
 
 .heroTitle {
-  --animate-in: 0;
   --scroll-x: 0;
   --scroll-y: 0;
   position: absolute;
@@ -119,24 +118,35 @@
   bottom: 14.6rem;
   transform:
     translateX(calc(var(--scroll-x) * 1px))
-    translateY(calc((1 - var(--animate-in)) * 4rem + var(--scroll-y) * 1px));
+    translateY(calc(var(--scroll-y) * 1px));
   width: fit-content;
   max-width: 56.2rem;
-  text-align: left;
+  text-align: center;
   color: var(--color-white);
   z-index: 4;
-  opacity: var(--animate-in);
 }
 
 @media (max-width: 768px) {
   .heroTitle {
     right: auto;
     left: 50%;
-    transform: translateX(-50%) translateY(calc((1 - var(--animate-in)) * 4rem));
+    transform: translateX(-50%);
     width: 28.4rem;
     bottom: 12rem;
     text-align: center;
   }
+}
+
+.heroLine {
+  display: block;
+  position: relative;
+}
+
+.heroWord {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+  transform: translateY(4rem);
 }
 
 .heroTitleText {
@@ -1143,7 +1153,7 @@
 .sectionPartners {
   padding: 0 var(--base-padding);
   padding-top: 12.7rem;
-  padding-bottom: 12.7rem;
+  padding-bottom: 3.7rem;
   background-color: var(--color-white);
 }
 
@@ -1155,7 +1165,7 @@
 }
 
 .partnersTitleContainer {
-  margin-bottom: 8rem;
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {

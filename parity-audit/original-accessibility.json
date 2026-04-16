@@ -1,0 +1,257 @@
+{
+  "srOnly": [],
+  "ariaLabels": [
+    {
+      "tag": "BUTTON",
+      "ariaLabel": "Toggle menu",
+      "text": ""
+    },
+    {
+      "tag": "A",
+      "ariaLabel": "Go to homepage",
+      "text": ""
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Skip traffic.Time to fly.",
+      "text": "Skip traffic.Time to fly."
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "The future of aviation is coming soon.",
+      "text": "The future of aviation is coming soon."
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Elevate your commute with our all-electric air taxi, soon to be bookable at the tap of a button.",
+      "text": "Elevate your commute with our all-electric air tax"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Zero traffic. Zero operating emissions. Just the space and time your day deserves.",
+      "text": "Zero traffic. Zero operating emissions. Just the s"
+    },
+    {
+      "tag": "H2",
+      "ariaLabel": "Nowhere to go but Up",
+      "text": "Nowhere to go but UpLet's fly"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Leave city congestion behind and choose a stress-free commute through the clouds.",
+      "text": "Leave city congestion behind and choose a stress-f"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Sit back and enjoy.Breathtaking views come standard with every seat.",
+      "text": "Sit back and enjoy.Breathtaking views come standar"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Enjoy seamless travel with a choreographed rideshare to the vertiport.",
+      "text": "Enjoy seamless travel with a choreographed ridesha"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Experience Highlights",
+      "text": "Experience Highlights"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Skip town, let’s fly",
+      "text": "Skip town, let’s fly"
+    },
+    {
+      "tag": "DIV",
+      "ariaLabel": "Imagine looking forward to your commute. And forgetting what gridlock feels like. When flight is a part of everyday life, anything is possible.",
+      "text": "Imagine looking forward to your commute. And forge"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Our app coordinates your end-to-end commute, including an Uber to and from our vertiport.",
+      "text": "Our app coordinates your end-to-end commute, inclu"
+    },
+    {
+      "tag": "DIV",
+      "ariaLabel": "Seamless door to door travel, all from a few taps on our app.",
+      "text": "Seamless door to door travel, all from a few taps "
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Technology that makesthe dream possible",
+      "text": "Technology that makesthe dream possible"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "News from above",
+      "text": "News from above"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Mar 13, 2026",
+      "text": "Mar 13, 2026"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Joby Completes Piloted Electric Air Taxi Flight Across San Francisco Bay and Around the Golden Gate",
+      "text": "Joby Completes Piloted Electric Air Taxi Flight Ac"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Mar 11, 2026",
+      "text": "Mar 11, 2026"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Joby’s First FAA-Conforming Aircraft Takes Flight",
+      "text": "Joby’s First FAA-Conforming Aircraft Takes Flight"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Mar 9, 2026",
+      "text": "Mar 9, 2026"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Joby to Begin U.S. Operations in 2026 Under White House Air Taxi Program",
+      "text": "Joby to Begin U.S. Operations in 2026 Under White "
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "With partners like this,there’s nowhere to go but up.",
+      "text": "With partners like this,there’s nowhere to go but "
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Car Service",
+      "text": "Car Service"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Airlines",
+      "text": "Airlines"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Infrastructure",
+      "text": "Infrastructure"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "R&D",
+      "text": "R&D"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Technology",
+      "text": "Technology"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Government",
+      "text": "Government"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "We’re partnering with global leaders in ground transportation to seamlessly integrate air mobility into the future of door-to-door travel.",
+      "text": "We’re partnering with global leaders in ground tra"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Our partnerships with leading global airlines will integrate our air taxi service into existing aviation networks.",
+      "text": "Our partnerships with leading global airlines will"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Together with key infrastructure partners, we’re building the physical backbone needed for convenient everyday flight.",
+      "text": "Together with key infrastructure partners, we’re b"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "We collaborate with pioneers in manufacturing and innovation to create a vertically integrated, world-class production ecosystem.",
+      "text": "We collaborate with pioneers in manufacturing and "
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Our aviation technology partnerships power the systems that support navigation, autonomy, pilot training, and operational excellence.",
+      "text": "Our aviation technology partnerships power the sys"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "We collaborate with forward-thinking government agencies to shape policy, accelerate innovation, and enable the introduction of advanced air mobility.",
+      "text": "We collaborate with forward-thinking government ag"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "The sky was never the limit.",
+      "text": "The sky was never the limit."
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "In 2009, a small team of Joby engineers set out to build the future of flight. Thousands of test flights later, we've turned \"what if\" into \"what's next\"?",
+      "text": "In 2009, a small team of Joby engineers set out to"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Our future vision",
+      "text": "Our future vision"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "New wave aviation",
+      "text": "New wave aviation"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Dream of Flight",
+      "text": "Dream of Flight"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Dream of Flight",
+      "text": "Dream ofFlight"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Future Vision — 1",
+      "text": "Future Vision — 1"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Imagine a world where every cross-town invitation is a definite 'yes'.",
+      "text": "Imagine a world where every cross-town invitation "
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Future Vision — 2",
+      "text": "Future Vision — 2"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Where game day is gridlock-free and every restaurant is local.",
+      "text": "Where game day is gridlock-free and every restaura"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Future Vision — 3",
+      "text": "Future Vision — 3"
+    },
+    {
+      "tag": "SPAN",
+      "ariaLabel": "Where our cities are greener, more friendly places to be.",
+      "text": "Where our cities are greener, more friendly places"
+    },
+    {
+      "tag": "A",
+      "ariaLabel": "Go to homepage",
+      "text": ""
+    },
+    {
+      "tag": "BUTTON",
+      "ariaLabel": "Submit newsletter",
+      "text": ""
+    }
+  ],
+  "titles": [],
+  "bgImages": []
+}

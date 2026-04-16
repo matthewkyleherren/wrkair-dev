@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "title": "Joby Aviation",
+    "description": "Experience Joby Aviation’s all-electric air taxi: vertical take-off and landing, seamless door to door travel, all from our app. ",
+    "ogTitle": "Joby Aviation",
+    "ogDescription": "Experience Joby Aviation’s all-electric air taxi: vertical take-off and landing, seamless door to door travel, all from our app. ",
+    "ogImage": "https://cdn.sanity.io/images/h5mp19kq/production/b4d839a20b69d18660a477be188d08402b871a80-3840x2160.png?rect=0%2C72%2C3840%2C2016&w=1200&h=630&fit=crop&v=image-b4d839a20b69d18660a477be188d08402b871a80-3840x2160-png",
+    "ogUrl": "https://www.jobyaviation.com/",
+    "ogType": "website",
+    "twitterCard": "summary_large_image",
+    "twitterTitle": "Joby Aviation",
+    "twitterDescription": "Experience Joby Aviation’s all-electric air taxi: vertical take-off and landing, seamless door to door travel, all from our app. ",
+    "twitterImage": "https://cdn.sanity.io/images/h5mp19kq/production/b4d839a20b69d18660a477be188d08402b871a80-3840x2160.png?rect=0%2C120%2C3840%2C1920&w=1200&h=600&fit=crop&v=image-b4d839a20b69d18660a477be188d08402b871a80-3840x2160-png",
+    "canonical": "https://www.jobyaviation.com/",
+    "robots": null,
+    "lang": "en",
+    "charset": "UTF-8"
+  },
+  "jsonLd": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Joby Aviation",
+      "url": "https://www.jobyaviation.com",
+      "logo": "https://www.jobyaviation.com/images/logo.png"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Joby Aviation",
+      "url": "https://www.jobyaviation.com"
+    }
+  ],
+  "allMeta": [
+    {
+      "name": "",
+      "property": "",
+      "content": "",
+      "charset": "utf-8"
+    },
+    {
+      "name": "viewport",
+      "property": "",
+      "content": "width=device-width",
+      "charset": ""
+    },
+    {
+      "name": "description",
+      "property": "",
+      "content": "Experience Joby Aviation’s all-electric air taxi: vertical take-off and landing, seamless door to door travel, all from our app. ",
+      "charset": ""
+    },
+    {
+      "name": "",
+      "property": "og:title",
+      "content": "Joby Aviation",
+      "charset": ""
+    },
+    {
+      "name": "",
+      "property": "og:description",
+      "content": "Experience Joby Aviation’s all-electric air taxi: vertical take-off and landing, seamless door to door travel, all from our app. ",
+      "charset": ""
+    },
+    {
+      "name": "",
+      "property": "og:type",
+      "content": "website",
+      "charset": ""
+    },
+    {
+      "name": "",
+      "property": "og:url",
+      "content": "https://www.jobyaviation.com/",
+      "charset": ""
+    },
+    {
+      "name": "",
+      "property": "og:image",
+      "content": "https://cdn.sanity.io/images/h5mp19kq/production/b4d839a20b69d18660a477be188d08402b871a80-3840x2160.png?rect=0%2C72%2C3840%2C2016&w=1200&h=630&fit=crop&v=image-b4d839a20b69d18660a477be188d08402b871a80-3840x2160-png",
+      "charset": ""
+    },
+    {
+      "name": "",
+      "property": "og:image:width",
+      "content": "1200",
+      "charset": ""
+    },
+    {
+      "name": "",
+      "property": "og:image:height",
+      "content": "630",
+      "charset": ""
+    },
+    {
+      "name": "twitter:card",
+      "property": "",
+      "content": "summary_large_image",
+      "charset": ""
+    },
+    {
+      "name": "twitter:title",
+      "property": "",
+      "content": "Joby Aviation",
+      "charset": ""
+    },
+    {
+      "name": "twitter:description",
+      "property": "",
+      "content": "Experience Joby Aviation’s all-electric air taxi: vertical take-off and landing, seamless door to door travel, all from our app. ",
+      "charset": ""
+    },
+    {
+      "name": "twitter:image",
+      "property": "",
+      "content": "https://cdn.sanity.io/images/h5mp19kq/production/b4d839a20b69d18660a477be188d08402b871a80-3840x2160.png?rect=0%2C120%2C3840%2C1920&w=1200&h=600&fit=crop&v=image-b4d839a20b69d18660a477be188d08402b871a80-3840x2160-png",
+      "charset": ""
+    },
+    {
+      "name": "twitter:image:alt",
+      "property": "",
+      "content": "Joby Aviation | Electric Air Taxi for Zero-Emission Travel",
+      "charset": ""
+    },
+    {
+      "name": "twitter:site",
+      "property": "",
+      "content": "@jobyaviation",
+      "charset": ""
+    }
+  ]
+}

@@ -160,11 +160,14 @@ export default function HomePage() {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
       const video = isMobile ? heroVideoMobileRef.current : heroVideoRef.current;
 
-      // Page-load intro animation
+      // Page-load intro animation — word-by-word stagger on title
       const introTl = gsap.timeline({ delay: 0.5 });
-      if (heroTitleRef.current) introTl.to(heroTitleRef.current, { "--animate-in": 1, ease: "power2.out", duration: 0.8 }, 0);
-      if (heroSubtitleRef.current) introTl.to(heroSubtitleRef.current, { "--animate-in": 1, ease: "power2.out", duration: 0.8 }, 0.2);
-      if (heroTextSlidesRef.current) introTl.to(heroTextSlidesRef.current, { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.6 }, 0.4);
+      const heroWords = heroTitleRef.current?.querySelectorAll(`.${styles.heroWord}`);
+      if (heroWords && heroWords.length) {
+        introTl.to(heroWords, { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.7, stagger: 0.06 }, 0);
+      }
+      if (heroSubtitleRef.current) introTl.to(heroSubtitleRef.current, { "--animate-in": 1, ease: "power2.out", duration: 0.8 }, 0.25);
+      if (heroTextSlidesRef.current) introTl.to(heroTextSlidesRef.current, { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.6 }, 0.5);
       kills.push(introTl);
 
       const r = 1 / 14;
@@ -173,7 +176,9 @@ export default function HomePage() {
 
       if (heroMediaRef.current) innerTl.to(heroMediaRef.current, { "--translate-y-progress": 1, "--border-radius-in": 1, ease: "power1.inOut", duration: r }, 0);
       if (heroTitleRef.current) {
-        innerTl.to(heroTitleRef.current, { "--animate-in": 1, ease: "power1.inOut", duration: r }, 0);
+        // Ensure words are visible when scroll takes over
+        const scrollWords = heroTitleRef.current.querySelectorAll(`.${styles.heroWord}`);
+        if (scrollWords.length) innerTl.to(scrollWords, { opacity: 1, y: "0rem", duration: r, ease: "power1.inOut" }, 0);
         // Scroll-driven offset: move title up and left as user scrolls
         if (!isMobile) innerTl.fromTo(heroTitleRef.current, { "--scroll-x": 0, "--scroll-y": 0 }, { "--scroll-x": -196, "--scroll-y": -76, ease: "power1.out", duration: 0.8 }, r);
       }
@@ -622,8 +627,16 @@ export default function HomePage() {
               />
             </div>
             <div ref={heroTitleRef} className={styles.heroTitle}>
-              <h1 className={styles.heroTitleText}>
-                Skip traffic.{"\n"}Time to fly.
+              <h1 className={styles.heroTitleText} aria-label="Skip traffic. Time to fly.">
+                <span className={styles.heroLine} aria-hidden="true">
+                  <span className={styles.heroWord}>Skip</span>{" "}
+                  <span className={styles.heroWord}>traffic.</span>
+                </span>
+                <span className={styles.heroLine} aria-hidden="true">
+                  <span className={styles.heroWord}>Time</span>{" "}
+                  <span className={styles.heroWord}>to</span>{" "}
+                  <span className={styles.heroWord}>fly.</span>
+                </span>
               </h1>
             </div>
             <div ref={heroSubtitleRef} className={styles.heroSubtitle}>

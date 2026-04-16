@@ -1,0 +1,269 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic:
+      - button "Toggle menu" [ref=e4] [cursor=pointer]
+      - link "Go to homepage" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - img [ref=e8]
+  - generic [ref=e11]:
+    - generic [ref=e14]:
+      - heading "Skip traffic. Time to fly." [level=1] [ref=e18]
+      - paragraph [ref=e20]: The future of aviation is coming soon.
+      - generic [ref=e21]:
+        - generic: Elevate your commute with our all-electric air taxi, soon to be bookable at the tap of a button.
+        - generic [ref=e254]: Zero traffic. Zero operating emissions. Just the space and time your day deserves.
+    - generic [ref=e24]:
+      - generic [ref=e26]:
+        - heading "Nowhere to go but Up" [level=2] [ref=e27]:
+          - generic [ref=e28]: Let's fly
+        - generic [ref=e29]:
+          - generic [ref=e30]:
+            - img "Leave city congestion behind and choose a stress-free commute through the clouds." [ref=e33]
+            - link "1 Leave city congestion behind and choose a stress-free commute through the clouds." [ref=e34] [cursor=pointer]:
+              - /url: /experience
+              - generic [ref=e35]: "1"
+              - paragraph [ref=e36]: Leave city congestion behind and choose a stress-free commute through the clouds.
+          - generic [ref=e37]:
+            - img "Sit back and enjoy. Breathtaking views come standard with every seat." [ref=e40]
+            - link "2 Sit back and enjoy. Breathtaking views come standard with every seat." [ref=e41] [cursor=pointer]:
+              - /url: /experience
+              - generic [ref=e42]: "2"
+              - paragraph [ref=e43]: Sit back and enjoy. Breathtaking views come standard with every seat.
+          - generic [ref=e44]:
+            - img "Enjoy seamless travel with a choreographed rideshare to the vertiport." [ref=e47]
+            - link "3 Enjoy seamless travel with a choreographed rideshare to the vertiport." [ref=e48] [cursor=pointer]:
+              - /url: /experience
+              - generic [ref=e49]: "3"
+              - paragraph [ref=e50]: Enjoy seamless travel with a choreographed rideshare to the vertiport.
+      - generic [ref=e51]:
+        - generic [ref=e52]: Imagine looking forward to your commute. And forgetting what gridlock feels like. When flight is a part of everyday life, anything is possible.
+        - link "Discover the Experience" [ref=e53] [cursor=pointer]:
+          - /url: /experience
+          - button "Discover the Experience" [ref=e54]:
+            - generic [ref=e55]: Discover the Experience
+    - generic [ref=e57]:
+      - img "Seamless door to door travel, all from a few taps on our app." [ref=e61]
+      - generic [ref=e63]: Seamless door to door travel, all from a few taps on our app.
+    - generic [ref=e64]:
+      - img "Technology that makes the dream possible" [ref=e67]
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - heading "Technology that makes the dream possible" [level=3] [ref=e72]
+          - link "Explore" [ref=e74] [cursor=pointer]:
+            - /url: /technology
+            - button "Explore" [ref=e75]:
+              - generic [ref=e76]: Explore
+        - generic [ref=e77]:
+          - generic [ref=e78]: Vertical take-off and landing
+          - generic [ref=e79]: 200 mph top speed
+          - generic [ref=e80]: Zero operating emissions
+    - generic [ref=e82]:
+      - heading "News from above" [level=2] [ref=e83]
+      - link "View all News" [ref=e85] [cursor=pointer]:
+        - /url: /news
+        - button "View all News" [ref=e86]:
+          - generic [ref=e87]: View all News
+      - generic [ref=e88]:
+        - link "Mar 13, 2026 Joby Completes Piloted Electric Air Taxi Flight Across San Francisco Bay and Around the Golden Gate Joby Completes Piloted Electric Air Taxi Flight Across San Francisco Bay and Around the Golden Gate" [ref=e89] [cursor=pointer]:
+          - /url: /news/joby-completes-piloted-electric-air-taxi-flight-across-san-francisco-bay-and-around-the-golden
+          - generic [ref=e90]:
+            - generic [ref=e91]: Mar 13, 2026
+            - paragraph [ref=e92]: Joby Completes Piloted Electric Air Taxi Flight Across San Francisco Bay and Around the Golden Gate
+          - img "Joby Completes Piloted Electric Air Taxi Flight Across San Francisco Bay and Around the Golden Gate" [ref=e94]
+        - link "Mar 11, 2026 Joby’s First FAA-Conforming Aircraft Takes Flight Joby’s First FAA-Conforming Aircraft Takes Flight" [ref=e95] [cursor=pointer]:
+          - /url: /news/joby-s-first-faa-conforming-aircraft-takes-flight
+          - generic [ref=e96]:
+            - generic [ref=e97]: Mar 11, 2026
+            - paragraph [ref=e98]: Joby’s First FAA-Conforming Aircraft Takes Flight
+          - img "Joby’s First FAA-Conforming Aircraft Takes Flight" [ref=e100]
+        - link "Mar 9, 2026 Joby to Begin U.S. Operations in 2026 Under White House Air Taxi Program Joby to Begin U.S. Operations in 2026 Under White House Air Taxi Program" [ref=e101] [cursor=pointer]:
+          - /url: /news/joby-to-begin-u-s-operations-in-2026-under-white-house-air-taxi-program
+          - generic [ref=e102]:
+            - generic [ref=e103]: Mar 9, 2026
+            - paragraph [ref=e104]: Joby to Begin U.S. Operations in 2026 Under White House Air Taxi Program
+          - img "Joby to Begin U.S. Operations in 2026 Under White House Air Taxi Program" [ref=e106]
+    - generic [ref=e108]:
+      - heading "With partners like this, there's nowhere to go but up." [level=2] [ref=e110]
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - paragraph [ref=e117] [cursor=pointer]: Car Service
+          - paragraph [ref=e119] [cursor=pointer]: Airlines
+          - paragraph [ref=e121] [cursor=pointer]: Infrastructure
+          - paragraph [ref=e123] [cursor=pointer]: R&D
+          - paragraph [ref=e125] [cursor=pointer]: Technology
+          - paragraph [ref=e127] [cursor=pointer]: Government
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - paragraph [ref=e130]: We’re partnering with global leaders in ground transportation to seamlessly integrate air mobility into the future of door-to-door travel.
+            - generic [ref=e131]:
+              - generic:
+                - generic:
+                  - img "Uber"
+          - generic:
+            - paragraph: Our partnerships with leading global airlines will integrate our air taxi service into existing aviation networks.
+            - generic:
+              - generic:
+                - generic:
+                  - img "Delta"
+              - generic:
+                - generic:
+                  - img "Virgin Atlantic"
+              - generic:
+                - generic:
+                  - img "ANA"
+          - generic:
+            - paragraph: Together with key infrastructure partners, we’re building the physical backbone needed for convenient everyday flight.
+            - generic:
+              - generic:
+                - generic:
+                  - img "Skyports"
+              - generic:
+                - generic:
+                  - img "Vertiports by Atlantic"
+              - generic:
+                - generic:
+                  - img "Signature Flight Support"
+              - generic:
+                - generic:
+                  - img "Jetex"
+              - generic:
+                - generic:
+                  - img "Clay Lacy"
+              - generic:
+                - generic:
+                  - img "Helo Holdings, Inc."
+          - generic:
+            - paragraph: We collaborate with pioneers in manufacturing and innovation to create a vertically integrated, world-class production ecosystem.
+            - generic:
+              - generic:
+                - generic:
+                  - img "Toyota"
+              - generic:
+                - generic:
+                  - img "NASA"
+          - generic:
+            - paragraph: Our aviation technology partnerships power the systems that support navigation, autonomy, pilot training, and operational excellence.
+            - generic:
+              - generic:
+                - generic:
+                  - img "Garmin"
+              - generic:
+                - generic:
+                  - img "CAE"
+          - generic:
+            - paragraph: We collaborate with forward-thinking government agencies to shape policy, accelerate innovation, and enable the introduction of advanced air mobility.
+    - generic [ref=e132]:
+      - img "The sky was never the limit." [ref=e135]
+      - generic [ref=e138]:
+        - generic [ref=e139]:
+          - heading "The sky was never the limit." [level=3] [ref=e140]
+          - generic [ref=e141]:
+            - link "Discover our Story" [ref=e142] [cursor=pointer]:
+              - /url: /company
+              - button "Discover our Story" [ref=e143]:
+                - generic [ref=e144]: Discover our Story
+            - link "Work at Joby" [ref=e145] [cursor=pointer]:
+              - /url: /careers
+              - button "Work at Joby" [ref=e146]:
+                - generic [ref=e147]: Work at Joby
+        - paragraph [ref=e149]: In 2009, a small team of Joby engineers set out to build the future of flight. Thousands of test flights later, we've turned "what if" into "what's next"?
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - generic [ref=e154]: Our future vision
+        - heading "Dream of Flight" [level=2] [ref=e155]
+      - generic [ref=e156]:
+        - generic [ref=e157]:
+          - generic [ref=e158]: Future Vision — 1
+          - generic [ref=e159]: Imagine a world where every cross-town invitation is a definite ‘yes’.
+        - generic [ref=e160]:
+          - generic [ref=e161]: Future Vision — 2
+          - generic [ref=e162]: Where game day is gridlock-free and every restaurant is local.
+        - generic [ref=e163]:
+          - generic [ref=e164]: Future Vision — 3
+          - generic [ref=e165]: Where our cities are greener, more friendly places to be.
+  - contentinfo [ref=e167]:
+    - list [ref=e168]:
+      - listitem [ref=e169]:
+        - link "Privacy Policy" [ref=e171] [cursor=pointer]:
+          - /url: /privacy-policy
+      - listitem [ref=e172]:
+        - link "Terms of Use" [ref=e174] [cursor=pointer]:
+          - /url: /terms-of-use
+      - listitem [ref=e175]:
+        - link "Impact Reporting" [ref=e177] [cursor=pointer]:
+          - /url: /impact-reporting
+      - listitem [ref=e178]:
+        - link "Health Plan Transparency" [ref=e180] [cursor=pointer]:
+          - /url: /transparency
+      - listitem [ref=e181]:
+        - link "Safety Policy" [ref=e183] [cursor=pointer]:
+          - /url: /safety-policy
+      - listitem [ref=e184]: © 2026 Joby Aero, Inc.
+    - list [ref=e185]:
+      - listitem [ref=e186]: Discover
+      - listitem [ref=e187]:
+        - link "Experience" [ref=e189] [cursor=pointer]:
+          - /url: /experience
+      - listitem [ref=e190]:
+        - link "Technology" [ref=e192] [cursor=pointer]:
+          - /url: /technology
+      - listitem [ref=e193]:
+        - link "Company" [ref=e195] [cursor=pointer]:
+          - /url: /company
+      - listitem [ref=e196]:
+        - link "News" [ref=e198] [cursor=pointer]:
+          - /url: /news
+      - listitem [ref=e199]:
+        - link "Careers" [ref=e201] [cursor=pointer]:
+          - /url: /careers
+    - list [ref=e202]:
+      - listitem [ref=e203]: Explore
+      - listitem [ref=e204]:
+        - link "For Investors" [ref=e206] [cursor=pointer]:
+          - /url: https://ir.jobyaviation.com/
+      - listitem [ref=e207]:
+        - link "Fly Blade" [ref=e209] [cursor=pointer]:
+          - /url: https://blade.com/
+      - listitem [ref=e210]:
+        - link "Joby Shop" [ref=e212] [cursor=pointer]:
+          - /url: https://shop.jobyaviation.com/
+    - list [ref=e213]:
+      - listitem [ref=e214]: Connect
+      - listitem [ref=e215]:
+        - link "YouTube" [ref=e217] [cursor=pointer]:
+          - /url: https://www.youtube.com/@JobyAviation
+      - listitem [ref=e218]:
+        - link "Instagram" [ref=e220] [cursor=pointer]:
+          - /url: https://www.instagram.com/jobyaviation/
+      - listitem [ref=e221]:
+        - link "LinkedIn" [ref=e223] [cursor=pointer]:
+          - /url: https://www.linkedin.com/company/jobyaviation/
+      - listitem [ref=e224]:
+        - link "X" [ref=e226] [cursor=pointer]:
+          - /url: https://x.com/jobyaviation
+    - link "Go to homepage" [ref=e227] [cursor=pointer]:
+      - /url: /
+      - img [ref=e229]
+    - generic [ref=e231]:
+      - generic [ref=e232]: Sign up for updates
+      - generic [ref=e233]:
+        - textbox "Enter e-mail address" [ref=e234]
+        - button "Submit newsletter":
+          - img
+      - generic:
+        - generic:
+          - text: By entering your email address you agree to receive newsletters, updates, and marketing information. You can opt out at any time.
+          - link "See our Privacy Policy.":
+            - /url: /privacy-policy
+  - generic [ref=e239] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e240]:
+      - img [ref=e241]
+    - generic [ref=e244]:
+      - button "Open issues overlay" [ref=e245]:
+        - generic [ref=e246]:
+          - generic [ref=e247]: "0"
+          - generic [ref=e248]: "1"
+        - generic [ref=e249]: Issue
+      - button "Collapse issues badge" [ref=e250]:
+        - img [ref=e251]
+  - alert [ref=e253]
