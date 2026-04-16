@@ -99,6 +99,7 @@ export default function HomePage() {
   const heroTextSlidesRef = useRef<HTMLDivElement>(null);
 
   /* --- Refs: Experience Highlights --- */
+  const expHighlightsRef = useRef<HTMLDivElement>(null);
   const expStickyWrapperRef = useRef<HTMLDivElement>(null);
   const expSlidesRef = useRef<HTMLDivElement>(null);
   const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
@@ -212,8 +213,28 @@ export default function HomePage() {
     }
 
     /* ===================================================================
-       EXPERIENCE HIGHLIGHTS — Scroll-driven slide carousel
+       EXPERIENCE HIGHLIGHTS — Background color transition + Scroll-driven slide carousel
        =================================================================== */
+    // Blue-to-cream background transition (matches original GSAP-driven inline styles)
+    if (expHighlightsRef.current) {
+      const bgTl = gsap.timeline();
+      bgTl.to(expHighlightsRef.current, {
+        backgroundColor: "rgb(245, 244, 223)",
+        color: "rgb(14, 22, 32)",
+        ease: "power2.out",
+        duration: 1,
+      });
+
+      const bgSt = ScrollTrigger.create({
+        trigger: expHighlightsRef.current,
+        start: "top top",
+        end: "top -70%",
+        scrub: 0.5,
+        animation: bgTl,
+      });
+      kills.push(bgSt, bgTl);
+    }
+
     const expWrapper = expStickyWrapperRef.current;
     if (expWrapper) {
       const isMobile = window.matchMedia("(max-width: 768px)").matches;
@@ -398,13 +419,15 @@ export default function HomePage() {
             if (newsFired) return;
             newsFired = true;
 
-            // Title + button reveal
+            // Title word-by-word reveal + button reveal
             if (newsSectionRef.current) {
-              const title = newsSectionRef.current.querySelector("h2");
-              if (title) gsap.to(title, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7 });
+              const titleWords = newsSectionRef.current.querySelectorAll(`h2 .${styles.animatedWord}`);
+              if (titleWords.length) {
+                gsap.to(titleWords, { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.7, stagger: 0.08 });
+              }
 
               const btnContainer = newsSectionRef.current.querySelector("[class*='newsButtonContainer']");
-              if (btnContainer) gsap.to(btnContainer, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7, delay: 0.1 });
+              if (btnContainer) gsap.to(btnContainer, { y: "0rem", opacity: 1, ease: "power2.out", duration: 0.7, delay: 0.2 });
             }
 
             // Staggered card animations
@@ -433,8 +456,28 @@ export default function HomePage() {
     }
 
     /* ===================================================================
-       PARTNERS — Scroll-driven category switching
+       PARTNERS — Title word-by-word reveal + scroll-driven switching
        =================================================================== */
+    {
+      const partnersTitleEl = document.querySelector(`.${styles.partnersTitle}`);
+      if (partnersTitleEl) {
+        const partnerTitleWords = partnersTitleEl.querySelectorAll(`.${styles.animatedWord}`);
+        if (partnerTitleWords.length) {
+          let partnersTitleFired = false;
+          const ptSt = ScrollTrigger.create({
+            trigger: partnersTitleEl,
+            start: "top 75%",
+            onEnter: () => {
+              if (partnersTitleFired) return;
+              partnersTitleFired = true;
+              gsap.to(partnerTitleWords, { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.7, stagger: 0.06 });
+            },
+          });
+          kills.push(ptSt);
+        }
+      }
+    }
+
     if (partnersStickyWrapperRef.current) {
       const numCats = PARTNER_CATEGORIES.length;
 
@@ -522,8 +565,30 @@ export default function HomePage() {
     }
 
     /* ===================================================================
-       ILLUSTRATION — Parallax layers + text reveals + border radius
+       ILLUSTRATION — Title word reveal + parallax layers + text reveals + border radius
        =================================================================== */
+    {
+      const illTitleDesktop = document.querySelector(`.${styles.illustrationTitleDesktop}`);
+      const illTitleMobile = document.querySelector(`.${styles.illustrationTitleMobile}`);
+      const illTitle = window.matchMedia("(max-width: 768px)").matches ? illTitleMobile : illTitleDesktop;
+      if (illTitle) {
+        const illTitleWords = illTitle.querySelectorAll(`.${styles.animatedWord}`);
+        if (illTitleWords.length) {
+          let illTitleFired = false;
+          const itSt = ScrollTrigger.create({
+            trigger: illTitle,
+            start: "top 80%",
+            onEnter: () => {
+              if (illTitleFired) return;
+              illTitleFired = true;
+              gsap.to(illTitleWords, { opacity: 1, y: "0rem", ease: "power2.out", duration: 0.7, stagger: 0.08 });
+            },
+          });
+          kills.push(itSt);
+        }
+      }
+    }
+
     if (illustrationContentWrapperRef.current) {
       // Border radius reveal - starts rounding and flattens as section enters
       const illBrTl = gsap.timeline();
@@ -662,7 +727,7 @@ export default function HomePage() {
           SECTION 2: Experience Highlights
           ================================================================ */}
       <section id="experience-highlights" className={styles.sectionWrapper}>
-        <div className={styles.experienceHighlights}>
+        <div ref={expHighlightsRef} className={styles.experienceHighlights}>
           <div ref={expStickyWrapperRef} className={styles.experienceStickyWrapper}>
             <div className={styles.experienceStickyElement}>
               <h2 className={styles.experienceTitle} aria-label="Nowhere to go but Up">
@@ -861,7 +926,13 @@ export default function HomePage() {
           ================================================================ */}
       <section id="news" ref={newsSectionRef} className={`${styles.sectionWrapper} ${styles.sectionWrapperContain}`}>
         <div className={styles.sectionNews}>
-          <h2 className={styles.newsTitle}>News from above</h2>
+          <h2 className={styles.newsTitle} aria-label="News from above">
+            <span className={styles.animatedLine} aria-hidden="true">
+              <span className={styles.animatedWord}>News</span>{" "}
+              <span className={styles.animatedWord}>from</span>{" "}
+              <span className={styles.animatedWord}>above</span>
+            </span>
+          </h2>
 
           <div className={styles.newsButtonContainer}>
             <Link href="/news">
@@ -915,8 +986,21 @@ export default function HomePage() {
       <section id="section-partners" className={`${styles.sectionWrapper} ${styles.sectionWrapperContain}`}>
         <div className={styles.sectionPartners}>
           <div className={styles.partnersTitleContainer}>
-            <h2 className={styles.partnersTitle}>
-              With partners like this,{"\n"}there&apos;s nowhere to go but up.
+            <h2 className={styles.partnersTitle} aria-label="With partners like this, there's nowhere to go but up.">
+              <span className={styles.animatedLine} aria-hidden="true">
+                <span className={styles.animatedWord}>With</span>{" "}
+                <span className={styles.animatedWord}>partners</span>{" "}
+                <span className={styles.animatedWord}>like</span>{" "}
+                <span className={styles.animatedWord}>this,</span>
+              </span>
+              <span className={styles.animatedLine} aria-hidden="true">
+                <span className={styles.animatedWord}>there&apos;s</span>{" "}
+                <span className={styles.animatedWord}>nowhere</span>{" "}
+                <span className={styles.animatedWord}>to</span>{" "}
+                <span className={styles.animatedWord}>go</span>{" "}
+                <span className={styles.animatedWord}>but</span>{" "}
+                <span className={styles.animatedWord}>up.</span>
+              </span>
             </h2>
           </div>
 
@@ -1068,11 +1152,21 @@ export default function HomePage() {
               <span className={styles.illustrationLabelLeft}>Our future vision</span>
               <span className={styles.illustrationLabelRight}>New wave aviation</span>
             </div>
-            <h2 className={styles.illustrationTitleDesktop}>
-              Dream of Flight
+            <h2 className={styles.illustrationTitleDesktop} aria-label="Dream of Flight">
+              <span className={styles.animatedLine} aria-hidden="true">
+                <span className={styles.animatedWord}>Dream</span>{" "}
+                <span className={styles.animatedWord}>of</span>{" "}
+                <span className={styles.animatedWord}>Flight</span>
+              </span>
             </h2>
-            <h2 className={styles.illustrationTitleMobile}>
-              Dream{"\n"}of Flight
+            <h2 className={styles.illustrationTitleMobile} aria-label="Dream of Flight">
+              <span className={styles.animatedLine} aria-hidden="true">
+                <span className={styles.animatedWord}>Dream</span>
+              </span>
+              <span className={styles.animatedLine} aria-hidden="true">
+                <span className={styles.animatedWord}>of</span>{" "}
+                <span className={styles.animatedWord}>Flight</span>
+              </span>
             </h2>
           </div>
 

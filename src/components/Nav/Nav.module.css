@@ -755,6 +755,11 @@
   transform: translateY(0);
 }
 
+.inlineButtonNav a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .inlineButtonNav svg {
   width: 0.9rem;
   height: 0.8rem;

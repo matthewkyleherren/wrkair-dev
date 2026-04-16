@@ -6,6 +6,22 @@
 @import "./fonts.css";
 
 /* ---------------------------------------------------------------------------
+   @property registrations — required for CSS transitions on custom properties
+   --------------------------------------------------------------------------- */
+
+@property --hover-scale-up {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --hover-scale-down {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 0;
+}
+
+/* ---------------------------------------------------------------------------
    Reset
    --------------------------------------------------------------------------- */
 
