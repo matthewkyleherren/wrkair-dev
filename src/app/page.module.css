@@ -46,7 +46,7 @@
 }
 
 .heroStickyWrapper {
-  --sticky-height-desktop: 1300vh;
+  --sticky-height-desktop: 1100vh;
   --sticky-height-mobile: 1300lvh;
   height: var(--sticky-height-desktop);
   position: relative;
@@ -833,7 +833,7 @@
 }
 
 .entryStickyWrapper {
-  height: 100vh;
+  height: 121vh;
   position: relative;
 }
 
@@ -1047,11 +1047,19 @@
   display: flex;
   flex-direction: row;
   gap: var(--gutter-width);
-  margin-top: 11.2rem;
+  margin-top: 22.6rem;
 }
 
-.newsContainer > * {
-  flex: 1 1 0;
+.newsContainer > *:nth-child(1) {
+  flex: 559 1 0;
+}
+
+.newsContainer > *:nth-child(2) {
+  flex: 458 1 0;
+}
+
+.newsContainer > *:nth-child(3) {
+  flex: 343 1 0;
 }
 
 @media (max-width: 768px) {
