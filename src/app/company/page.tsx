@@ -302,22 +302,26 @@ export default function CompanyPage() {
         <div className={styles.timelineContent}>
           <section id="mythology">
             <div className={styles.timelineWrapper}>
-              <div className={styles.timelineHeader}>
-                <div className={styles.headerColumn1}>
-                  <span className={styles.headerLabel}>Origins</span>
-                </div>
-                <div className={styles.headerColumn2}>
-                  <span className={styles.headerLabel}>2009</span>
-                </div>
-                <div className={styles.headerColumn3Intro}>
-                  <span className={styles.headerLabel}>The Beginning</span>
-                </div>
-                <div
-                  className={`${styles.headerColumnLast} ${styles.desktopOnly}`}
-                >
-                  <span className={styles.headerLabel}>
-                    Redwoods, Santa Cruz
-                  </span>
+              <div className={styles.originsWrapper}>
+                <div className={styles.originsSticky}>
+                  <div className={styles.timelineHeader}>
+                    <div className={styles.headerColumn1}>
+                      <span className={styles.headerLabel}>Origins</span>
+                    </div>
+                    <div className={styles.headerColumn2}>
+                      <span className={styles.headerLabel}>2009</span>
+                    </div>
+                    <div className={styles.headerColumn3Intro}>
+                      <span className={styles.headerLabel}>The Beginning</span>
+                    </div>
+                    <div
+                      className={`${styles.headerColumnLast} ${styles.desktopOnly}`}
+                    >
+                      <span className={styles.headerLabel}>
+                        Redwoods, Santa Cruz
+                      </span>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -427,7 +431,7 @@ export default function CompanyPage() {
                   </p>
                 </div>
 
-                <div className={styles.timelineHeader}>
+                <div className={`${styles.timelineHeader} ${styles.timelineLocationHeader}`}>
                   <div className={styles.headerColumn1}>
                     <span className={styles.headerLabel}>Origins</span>
                   </div>

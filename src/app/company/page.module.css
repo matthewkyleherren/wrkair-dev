@@ -252,6 +252,21 @@
   padding: 0 var(--base-padding);
 }
 
+/* Origins sticky scroll wrapper */
+.originsWrapper {
+  position: relative;
+  min-height: 152vh;
+}
+
+.originsSticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 4rem;
+}
+
 /* Intro timeline header */
 .timelineHeader {
   display: grid;
@@ -260,6 +275,7 @@
   padding: 2.4rem 0;
   border-top: 1px solid rgba(14, 22, 32, 0.15);
   align-items: start;
+  width: 100%;
 }
 
 .headerColumn1 {
@@ -343,6 +359,11 @@
 
 .timelinePastIntro {
   padding-bottom: 4rem;
+}
+
+.timelineLocationHeader {
+  min-height: 58.5rem;
+  align-content: center;
 }
 
 /* ---------------------------------------------------------------------------
@@ -549,7 +570,7 @@
 
 /* Joby Today */
 .todayBlock {
-  padding: 12rem 0 8rem;
+  padding: 12rem 0 10rem;
   border-top: 1px solid rgba(14, 22, 32, 0.15);
 }
 
@@ -571,25 +592,27 @@
   letter-spacing: -0.02em;
   color: var(--color-black);
   max-width: 100rem;
-  margin-bottom: 8rem;
+  margin-bottom: 16rem;
 }
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--gutter-width);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
 }
 
 .statBlock {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 2.4rem;
+  padding: 1.6rem 0 8rem;
 }
 
 .statLabel {
   font-family: var(--font-text);
   font-size: 1.4rem;
   font-weight: 500;
+  line-height: 1.2;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--color-black);
@@ -617,7 +640,7 @@
 
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 3.2rem;
+    gap: 2.4rem;
   }
 
   .statValue {
